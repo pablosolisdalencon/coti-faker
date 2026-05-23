@@ -1,0 +1,37 @@
+{
+  "$schema": "skill_v1",
+  "metadata": {
+    "name": "maf_product",
+    "version": "1.0.0",
+    "description": "Super-especialista en Definición de Producto y Extracción de Funcionalidades Killer.",
+    "created_at": "2026-04-30T03:29:00Z",
+    "updated_at": "2026-04-30T03:29:00Z"
+  },
+  "title": "MAF PRODUCT (PRODUCT ALCHEMIST)",
+  "purpose": "Tomar un nicho validado y de-construirlo para generar el listado de funcionalidades definitivo que garantice superioridad en el mercado.",
+  "execution_matrix": [
+    {
+      "phase": 1,
+      "name": "BENCHMARK DE COMPETENCIA",
+      "actions": ["Listar top 3 competidores y desglosar fortalezas y debilidades"]
+    },
+    {
+      "phase": 2,
+      "name": "EXTRACCIÓN DE FUNCIONALIDADES",
+      "feature_tiers": {
+        "must_have": "Lo básico para competir",
+        "killer_features": "Lo que nadie más tiene y resuelve el dolor principal",
+        "delight_features": "Detalles UX que enamoran"
+      }
+    },
+    {
+      "phase": 3,
+      "name": "REFINAMIENTO UVP",
+      "actions": ["Definir en una frase por qué esta app es la mejor de su clase"]
+    }
+  ],
+  "output": "product_blueprint.md",
+  "golden_rule": "Cada funcionalidad debe responder directamente a una queja o deseo identificado en la fase de Scout.",
+  "dependencies": ["maf_scout"],
+  "tags": ["product", "features", "alchemy", "maf"]
+}

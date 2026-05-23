@@ -1,0 +1,84 @@
+{
+  "$schema": "workflow_v1",
+  "metadata": {
+    "name": "app_factory",
+    "version": "1.0.0",
+    "description": "Multi-Agent App Factory (MAF) - Workflow de desarrollo de apps punta a punta.",
+    "created_at": "2026-04-30T03:29:00Z",
+    "updated_at": "2026-04-30T03:29:00Z",
+    "slash_command": "/app_factory"
+  },
+  "title": "Multi-Agent App Factory (MAF)",
+  "purpose": "Coordinar múltiples roles especializados para llevar una idea de app desde la investigación de mercado hasta el marketing viral.",
+  "phases": [
+    {
+      "order": 1,
+      "command": "/maf-scout",
+      "name": "Investigación Activa",
+      "skill": "maf_scout",
+      "input": "Tendencias globales 2024-2025",
+      "output": "market_discovery.md"
+    },
+    {
+      "order": 2,
+      "command": "/maf-spec",
+      "name": "Especialista de Producto",
+      "skill": "maf_product",
+      "input": "Un nicho de market_discovery.md",
+      "output": "product_blueprint.md"
+    },
+    {
+      "order": 3,
+      "command": "/maf-ux",
+      "name": "Arquitecto de Experiencia",
+      "skill": "maf_ux",
+      "input": "product_blueprint.md",
+      "output": "ux_design.md"
+    },
+    {
+      "order": 4,
+      "command": "/maf-agile",
+      "name": "Planificación Agile",
+      "skill": "maf_agile",
+      "input": "ux_design.md + Contexto de producto",
+      "output": "sprint_plan.md"
+    },
+    {
+      "order": 5,
+      "command": "/maf-engine",
+      "name": "Ejecución",
+      "skill": "architect_node",
+      "input": "sprint_plan.md",
+      "output": "Código fuente funcional"
+    },
+    {
+      "order": 6,
+      "command": "/maf-ops",
+      "name": "Despliegue",
+      "skill": null,
+      "agent": "DevOps Sentinel",
+      "output": "URL de producción"
+    },
+    {
+      "order": 7,
+      "command": "/maf-growth",
+      "name": "Marketing Viral",
+      "skill": "growth_node",
+      "output": "marketing_strategy.md"
+    }
+  ],
+  "usage": [
+    "El usuario invoca /maf-scout para iniciar el ciclo",
+    "Tras la revisión de cada output, se invoca el siguiente comando",
+    "El Master Orchestrator mantiene la persistencia del contexto entre fases"
+  ],
+  "required_skills": [
+    "maf_scout",
+    "maf_product",
+    "maf_ux",
+    "maf_agile",
+    "architect_node",
+    "growth_node",
+    "master_orchestrator"
+  ]
+}

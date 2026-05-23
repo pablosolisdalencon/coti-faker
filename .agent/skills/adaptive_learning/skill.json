@@ -1,0 +1,60 @@
+{
+  "$schema": "skill_v1",
+  "metadata": {
+    "name": "adaptive_learning",
+    "version": "2.0.0",
+    "description": "Motor de Mapeo Topológico y Orquestación de Aprendizaje Multi-Dominio.",
+    "created_at": "2026-04-30T03:29:00Z",
+    "updated_at": "2026-04-30T04:36:00Z"
+  },
+  "title": "ADAPTIVE LEARNING (TOPÓLOGO DE CONOCIMIENTO)",
+  "purpose": "Descomponer tareas complejas en nodos conceptuales, identificar dependencias laterales entre dominios, y orquestar la adquisición de experticia delegando cada nodo a hyper_specialist. Es el MAPA, no la excavadora.",
+  "execution_matrix": [
+    {
+      "phase": 1,
+      "name": "MAPEADO TOPOLÓGICO DE LA INCÓGNITA",
+      "type": "macro_learning",
+      "actions": [
+        "Dividir la tarea en Nodos Conceptuales Base",
+        "Identificar dependencias laterales: dominios colaterales necesarios para respuesta 360° (Seguridad, Arquitectura, Negocio, etc.)",
+        "Producir grafo de nodos con prioridad de exploración"
+      ]
+    },
+    {
+      "phase": 2,
+      "name": "DELEGACIÓN A HYPER_SPECIALIST",
+      "type": "orchestrated_micro_learning",
+      "actions": [
+        "Para cada Nodo Conceptual identificado, invocar hyper_specialist con el nodo como input",
+        "hyper_specialist ejecuta: Deep Domain ID → State of Art Research → Expert Ghosting → Brief de Experticia",
+        "Recopilar los Briefs de Experticia de cada nodo"
+      ],
+      "delegates_to": "hyper_specialist"
+    },
+    {
+      "phase": 3,
+      "name": "SÍNTESIS MULTIPERSPECTIVA",
+      "type": "synthesis",
+      "actions": [
+        "Compilar todos los Briefs de Experticia de los nodos procesados",
+        "Cruzar hallazgos entre nodos para detectar sinergias y contradicciones",
+        "Destilar en acciones técnicas claras eliminando redundancias",
+        "Producir entregable unificado aplicado a la tarea principal"
+      ]
+    }
+  ],
+  "activation_conditions": [
+    "Cuando la tarea involucra múltiples dominios donde una perspectiva unilineal no basta",
+    "Cuando la simulación mental detecta fricción cognitiva o certidumbre < 99.9%",
+    "Cuando se identifican 2+ dominios laterales que debo dominar simultáneamente"
+  ],
+  "dependencies": [
+    "hyper_specialist"
+  ],
+  "tags": [
+    "topology",
+    "macro_learning",
+    "orchestration",
+    "multi_domain"
+  ]
+}

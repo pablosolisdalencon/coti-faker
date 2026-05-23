@@ -1,0 +1,50 @@
+{
+  "tipo_documento": "COTIZACIÓN",
+  "numero": 1218,
+  "emisor": {
+    "razon_social": "SERVICIOS DE MANTENIMIENTO INDUSTRIAL PÁEZ SPA",
+    "rut": "77.141.881-3",
+    "giro": "COMERCIALIZADORA DE INSUMOS DE ASEO, GASFITERIA Y REPARACIONES EN GRAL",
+    "direccion": "Carlos Ditborn 0702 , Ñuñoa , XIII Metropolitana de Santiago",
+    "fono": "+56 9 4239 5271",
+    "email": "primeservice.chile@gmail.com"
+  },
+  "receptor": {
+    "razon_social": "CONDOMINIO ANDES lll",
+    "rut": "65.108.391-5",
+    "direccion": "AV ESCUELA AGRICOLA 1710",
+    "comuna": "Macul"
+  },
+  "fechas": {
+    "fecha_emision": "11 de mayo de 2026",
+    "fecha_vencimiento": "11 de junio de 2026"
+  },
+  "detalles": [
+    {
+      "item": 1,
+      "descripcion_resumen": "Fabricación e instalación de cierre metálico tipo celosía para quincho",
+      "descripcion_detallada": "Fabricación e instalación de cierre metálico perimetral tipo celosía decorativa para sector quincho, considerando suministro e instalación de postes en perfil cuadrado 50x50x2 mm, estructura de refuerzo en perfil rectangular 40x10, montaje de paneles de celosía metálica prefabricada de 1,20 x 2,40 mts, excavaciones, hormigonado de postes, soldaduras, anclajes, pintura anticorrosiva, esmalte de terminación y consumibles necesarios para correcta ejecución. Incluye reparación de sectores existentes, equipos de apoyo para instalación y montaje.",
+      "cantidad": 2,
+      "unidad": "UNID",
+      "precio_unitario": 3150000,
+      "impuesto": "AF",
+      "total": 6300000
+    }
+  ],
+  "observaciones": [
+    "Valores consideran materiales, mano",
+    "de obra e instalación completa.",
+    "Forma de pago: 50% de anticipo para",
+    "inicio de trabajos 50% contra entrega",
+    "del trabajo terminado. Garantía por",
+    "fallas de instalación y soldadura.",
+    "Trabajos coordinados según horarios",
+    "permitidos por administración."
+  ],
+  "totales": {
+    "monto_neto": 6300000,
+    "monto_exento": 0,
+    "iva_19": 1197000,
+    "monto_total": 7497000
+  }
+}

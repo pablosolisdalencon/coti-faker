@@ -1,0 +1,233 @@
+{
+  "$schema": "index_v1",
+  "metadata": {
+    "generated_at": "2026-04-30T03:29:00Z",
+    "updated_at": "2026-05-23T00:00:00Z",
+    "description": "Tabla de Particiones del ecosistema agéntico ERIC. Índice maestro de todas las rutas disponibles.",
+    "entry_count": 36,
+    "workspace_root": "./"
+  },
+  "skills": [
+    {
+      "name": "agentic_architect",
+      "description": "Eminencia Suprema en Arquitectura y Optimización de Sistemas Agénticos. Autoridad absoluta sobre toda evolución del ecosistema.",
+      "category": "core",
+      "path": ".agent/skills/agentic_architect/skill.json"
+    },
+    {
+      "name": "adaptive_learning",
+      "description": "Técnicas M.O.E.A de Auto-Aprendizaje Amplio y Específico (Macro/Micro-Learning)",
+      "category": "core",
+      "path": ".agent/skills/adaptive_learning/skill.json"
+    },
+    {
+      "name": "architect_node",
+      "description": "Bot de Ingeniería Estructural 2.0. Despliegue fractal de Software (Web3/Fullstack).",
+      "category": "infrastructure",
+      "path": ".agent/skills/architect_node/skill.json"
+    },
+    {
+      "name": "brain",
+      "description": "Meta-Ingeniero de Sistemas de IA y Arquitecto de Lógica Predictiva (Creador de Sistemas Evolutivos).",
+      "category": "core",
+      "path": ".agent/skills/brain/skill.json"
+    },
+    {
+      "name": "growth_node",
+      "description": "Bot Engine de Viralidad, Dopamina e Ingeniería Social As Code.",
+      "category": "growth",
+      "path": ".agent/skills/growth_node/skill.json"
+    },
+    {
+      "name": "hyper_specialist",
+      "description": "Subsistema de Auto-Entrenamiento Súper Especialista para adquisición de experticia máxima.",
+      "category": "core",
+      "path": ".agent/skills/hyper_specialist/skill.json"
+    },
+    {
+      "name": "maf_agile",
+      "description": "Especialista en Metodologías Ágiles y Planificación Técnica por Sprints.",
+      "category": "product",
+      "path": ".agent/skills/maf_agile/skill.json"
+    },
+    {
+      "name": "maf_architect",
+      "description": "Bot de Ingeniería Estructural y Guardián del Stack Tecnológico Fijo.",
+      "category": "infrastructure",
+      "path": ".agent/skills/maf_architect/skill.json"
+    },
+    {
+      "name": "maf_brain",
+      "description": "Meta-Ingeniero de Decisiones Autónomas y Análisis Comparativo.",
+      "category": "product",
+      "path": ".agent/skills/maf_brain/skill.json"
+    },
+    {
+      "name": "maf_product",
+      "description": "Super-especialista en Definición de Producto y Extracción de Funcionalidades Killer.",
+      "category": "product",
+      "path": ".agent/skills/maf_product/skill.json"
+    },
+    {
+      "name": "maf_scout",
+      "description": "Agente de Inteligencia de Mercado y Descubrimiento de Nichos.",
+      "category": "product",
+      "path": ".agent/skills/maf_scout/skill.json"
+    },
+    {
+      "name": "maf_ux",
+      "description": "Arquitecto de Experiencia de Usuario y Diseño Estético de Alto Impacto.",
+      "category": "design",
+      "path": ".agent/skills/maf_ux/skill.json"
+    },
+    {
+      "name": "make_json",
+      "description": "Motor de Escritura JSON Perfecto y Robusto. Serialización determinista con validación zero-defect.",
+      "category": "utility",
+      "path": ".agent/skills/make_json/skill.json"
+    },
+    {
+      "name": "master_orchestrator",
+      "description": "Personalidad Base Nivel 7. Orquestador Dinámico de Autonomía Total y Enrutamiento Automático de Tareas.",
+      "category": "core",
+      "path": ".agent/skills/master_orchestrator/skill.json"
+    },
+    {
+      "name": "ux_reconstructor_2.0",
+      "description": "Exact UI Mirroring - Replicar conceptos visuales en código Tailwind/React con precisión 1:1.",
+      "category": "design",
+      "path": ".agent/skills/ux_reconstructor_2.0/skill.json"
+    },
+    {
+      "name": "memory_engine",
+      "description": "Motor de Memoria Cognitiva Biomimética. 3 capas: working, episodic, semantic.",
+      "category": "core",
+      "path": ".agent/skills/memory_engine/skill.json"
+    },
+    {
+      "name": "quotation_generator",
+      "description": "Generador de cotizaciones especializado en desglose técnico de construcción en Chile en formato estándar.",
+      "category": "product",
+      "path": ".agent/skills/quotation_generator/skill.json"
+    },
+    {
+      "name": "read-cotiza",
+      "description": "Digitalizador de cotizaciones chilenas en PDF a JSON estructurado y detallado.",
+      "category": "product",
+      "path": ".agent/skills/read-cotiza/skill.json"
+    },
+    {
+      "name": "analiza-cotiza",
+      "description": "Analizador y optimizador de cotizaciones de construcción con mejora de especificaciones de materiales y recargo asimétrico de costes.",
+      "category": "product",
+      "path": ".agent/skills/analiza-cotiza/skill.json"
+    },
+    {
+      "name": "get-prices",
+      "description": "Skill especializada en la recopilación de precios de materiales desde Sodimac y otros proveedores líderes en Chile.",
+      "category": "product",
+      "path": ".agent/skills/get-prices/skill.json"
+    },
+    {
+      "name": "make-cot-design",
+      "description": "Skill altamente especializada en diseño gráfico corporativo profesional, encargada de generar diseños de documentos de cotización formal basados en logotipos.",
+      "category": "design",
+      "path": ".agent/skills/make-cot-design/skill.json"
+    }
+  ],
+  "workflows": [
+    {
+      "name": "app_factory",
+      "description": "Multi-Agent App Factory (MAF) - Workflow de desarrollo de apps punta a punta.",
+      "slash_command": "/app_factory",
+      "path": ".agent/workflows/app_factory.json"
+    },
+    {
+      "name": "moea_agent",
+      "description": "Inicializar y ejecutar el Agente Meta-Ingeniero MOEA",
+      "slash_command": "/moea_agent",
+      "path": ".agent/workflows/moea_agent.json"
+    },
+    {
+      "name": "requirements_factory",
+      "description": "Generador masivo autónomo de requerimientos y estudio de mercado para todas las aplicaciones (Mass Requirements Factory)",
+      "slash_command": "/requirements_factory",
+      "path": ".agent/workflows/requirements_factory.json"
+    },
+    {
+      "name": "make_fake_pdf",
+      "description": "Workflow make-fake-pdf: Orquesta read-cotiza, analiza-cotiza y quotation_generator para generar cotizaciones alternativas para Construmax y Convector.",
+      "slash_command": "/make_fake_pdf",
+      "path": ".agent/workflows/make_fake_pdf.json"
+    }
+  ],
+  "config_files": [
+    {
+      "name": "core",
+      "description": "Configuración global del sistema agéntico ERIC",
+      "path": ".agent/core.json"
+    },
+    {
+      "name": "index",
+      "description": "Tabla de Particiones (este archivo)",
+      "path": ".agent/index.json"
+    },
+    {
+      "name": "manifest",
+      "description": "Boot sequence, identidad, pipeline cognitivo y capabilities",
+      "path": ".agent/manifest.json"
+    }
+  ],
+  "schemas": [
+    {
+      "name": "skill_v1",
+      "path": ".agent/schemas/skill_v1.json"
+    },
+    {
+      "name": "workflow_v1",
+      "path": ".agent/schemas/workflow_v1.json"
+    },
+    {
+      "name": "memory_v1",
+      "path": ".agent/schemas/memory_v1.json"
+    },
+    {
+      "name": "system_v1",
+      "path": ".agent/schemas/system_v1.json"
+    }
+  ],
+  "memory": [
+    {
+      "name": "working",
+      "layer": "Memoria de Trabajo (Corteza Prefrontal)",
+      "retention": "session_only",
+      "path": ".agent/memory/working.json"
+    },
+    {
+      "name": "episodic",
+      "layer": "Memoria Episódica (Hipocampo)",
+      "retention": "persistent_with_decay",
+      "path": ".agent/memory/episodic.json"
+    },
+    {
+      "name": "semantic",
+      "layer": "Memoria Semántica (Neocórtex)",
+      "retention": "permanent",
+      "path": ".agent/memory/semantic.json"
+    },
+    {
+      "name": "material_prices",
+      "layer": "Base de Conocimiento de Precios (Sodimac)",
+      "retention": "permanent",
+      "path": ".agent/memory/material_prices.json"
+    }
+  ],
+  "category_summary": {
+    "core": ["agentic_architect", "master_orchestrator", "brain", "hyper_specialist", "adaptive_learning", "memory_engine"],
+    "infrastructure": ["architect_node", "maf_architect"],
+    "product": ["maf_scout", "maf_product", "maf_brain", "maf_agile", "quotation_generator", "read-cotiza", "analiza-cotiza", "get-prices"],
+    "design": ["maf_ux", "ux_reconstructor_2.0", "make-cot-design"],
+    "growth": ["growth_node"],
+    "utility": ["make_json"]
+  }
+}

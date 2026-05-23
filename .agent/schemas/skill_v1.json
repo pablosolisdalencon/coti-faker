@@ -1,0 +1,48 @@
+{
+  "$id": "skill_v1",
+  "type": "object",
+  "description": "Esquema canónico para toda skill del ecosistema ERIC.",
+  "required": ["$schema", "metadata", "title", "purpose"],
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "const": "skill_v1"
+    },
+    "metadata": {
+      "type": "object",
+      "required": ["name", "version", "description", "created_at", "updated_at"],
+      "properties": {
+        "name": { "type": "string", "pattern": "^[a-z][a-z0-9_\\-\\.]*$" },
+        "version": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$" },
+        "description": { "type": "string" },
+        "created_at": { "type": "string", "format": "date-time" },
+        "updated_at": { "type": "string", "format": "date-time" }
+      }
+    },
+    "title": { "type": "string" },
+    "purpose": { "type": "string" },
+    "input": { "type": "string" },
+    "output": { "type": "string" },
+    "execution_matrix": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["phase", "name"],
+        "properties": {
+          "phase": { "type": "integer", "minimum": 1 },
+          "name": { "type": "string" },
+          "codename": { "type": "string" },
+          "type": { "type": "string" },
+          "actions": { "type": "array", "items": { "type": "string" } },
+          "delegates_to": { "type": "string" }
+        }
+      }
+    },
+    "activation_conditions": { "type": "array", "items": { "type": "string" } },
+    "invocation_modes": { "type": "array" },
+    "dependencies": { "type": "array", "items": { "type": "string" } },
+    "golden_rule": { "type": "string" },
+    "telemetry": { "type": "string" },
+    "tags": { "type": "array", "items": { "type": "string" } }
+  }
+}

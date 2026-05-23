@@ -1,0 +1,15 @@
+{
+  "$schema": "skill_v1",
+  "metadata": {
+    "name": "maf_brain",
+    "version": "1.0.0",
+    "description": "Meta-Ingeniero de Decisiones Autónomas y Análisis Comparativo.",
+    "created_at": "2026-04-30T03:29:00Z",
+    "updated_at": "2026-04-30T03:29:00Z"
+  },
+  "title": "MAF BRAIN (STRATEGIC DECISION ENGINE)",
+  "purpose": "Centro de mando autónomo. Evaluar múltiples caminos de desarrollo y seleccionar ruta óptima.",
+  "golden_rule": "La duda es ineficiencia. Si el 60% apunta a una dirección, tomar ese camino.",
+  "dependencies": ["maf_architect"],
+  "tags": ["decision_engine", "strategy", "maf"]
+}

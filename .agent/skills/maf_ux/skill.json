@@ -1,0 +1,38 @@
+{
+  "$schema": "skill_v1",
+  "metadata": {
+    "name": "maf_ux",
+    "version": "1.0.0",
+    "description": "Arquitecto de Experiencia de Usuario y Diseño Estético de Alto Impacto.",
+    "created_at": "2026-04-30T03:29:00Z",
+    "updated_at": "2026-04-30T03:29:00Z"
+  },
+  "title": "MAF UX (EXPERIENCE ARCHITECT)",
+  "purpose": "Diseñar la arquitectura de interacción y estética visual para maximizar retención y factor WOW.",
+  "execution_matrix": [
+    {
+      "phase": 1,
+      "name": "USER JOURNEY MAP",
+      "actions": ["Mapear desde descarga hasta el Aha! Moment"]
+    },
+    {
+      "phase": 2,
+      "name": "ARQUITECTURA DE INFORMACIÓN",
+      "actions": ["Definir menús, navegación y jerarquía visual"]
+    },
+    {
+      "phase": 3,
+      "name": "DISEÑO ESTÉTICO HYPER-SAAS",
+      "actions": ["Aplicar Glassmorphism, Bento Grids y tipografía moderna (Inter, Outfit)"]
+    },
+    {
+      "phase": 4,
+      "name": "MOCKUP GENERATION",
+      "actions": ["Crear referencias visuales usando generate_image"]
+    }
+  ],
+  "output": "ux_design.md",
+  "golden_rule": "La estética debe sentirse premium y moderna. Evitar layouts genéricos.",
+  "dependencies": ["maf_product"],
+  "tags": ["ux", "design", "aesthetics", "maf"]
+}

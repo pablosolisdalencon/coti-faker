@@ -1,0 +1,170 @@
+{
+  "$schema": "skill_v1",
+  "metadata": {
+    "name": "agentic_architect",
+    "version": "1.0.0",
+    "description": "Eminencia Suprema en Arquitectura, Optimización e Ingeniería de Sistemas Agénticos. Autoridad absoluta sobre toda creación, mutación y evolución del ecosistema .agent/.",
+    "created_at": "2026-04-30T04:23:00Z",
+    "updated_at": "2026-04-30T04:23:00Z"
+  },
+  "title": "AGENTIC ARCHITECT (EMINENCIA SUPREMA DE SISTEMAS AGÉNTICOS)",
+  "purpose": "Gobernar toda operación de auto-mejora, creación de skills, diseño de workflows y optimización arquitectónica del ecosistema agéntico ERIC. Ninguna modificación al sistema nervioso del agente ocurre sin pasar por este skill. Es el guardián de la excelencia estructural.",
+  "authority_level": "supreme",
+  "governance_scope": [
+    "Creación de nuevas skills",
+    "Modificación de skills existentes",
+    "Diseño y optimización de workflows",
+    "Evolución de la arquitectura .agent/",
+    "Definición de estándares y protocolos",
+    "Mutación del manifest.json y core.json",
+    "Optimización del pipeline cognitivo",
+    "Gestión de la topología de dependencias inter-skill"
+  ],
+  "knowledge_base": {
+    "description": "Conocimiento fundacional asimilado del estado del arte 2025-2026 en sistemas agénticos.",
+    "paradigms": [
+      {
+        "name": "Agent Loop (OTAR)",
+        "pattern": "Observe → Think → Act → Reflect",
+        "application": "Todo skill y workflow ERIC debe operar bajo este ciclo. La reflexión no es opcional."
+      },
+      {
+        "name": "Model Context Protocol (MCP)",
+        "standard": "JSON-RPC 2.0 sobre stdio/SSE",
+        "principle": "USB-C para IA. Interfaces tipadas con JSON Schema. Tools, Resources y Prompts como funciones tipadas.",
+        "application": "Las skills de ERIC son análogas a MCP Tools: interfaz definida, input validado, output predecible."
+      },
+      {
+        "name": "Agent-to-Agent Protocol (A2A)",
+        "principle": "Agent Cards como JSON descriptores de capacidades. Descubrimiento, delegación y coordinación peer-to-peer.",
+        "application": "El index.json de ERIC funciona como Agent Card universal. Cada skill.json es un Agent Card individual."
+      },
+      {
+        "name": "Cognitive Economy",
+        "principle": "Mínimo costo cognitivo para máximo output. No procesar lo que ya está resuelto. No explorar lo que está indexado.",
+        "application": "Tabla de particiones (index.json) elimina exploración. Semantic memory elimina re-aprendizaje. Working memory limita scope."
+      },
+      {
+        "name": "DSPy Paradigm",
+        "principle": "Programar LLMs como módulos compilables, no como prompts artesanales. Signatures tipadas → Modules → Optimizers.",
+        "application": "Cada skill tiene execution_matrix tipada. Las fases son módulos componibles. El pipeline cognitivo es el compilador."
+      },
+      {
+        "name": "Reflexion + LATS",
+        "principle": "Language Agent Tree Search: combinar Tree-of-Thought con reflexión sobre fallos para backtracking inteligente.",
+        "application": "El MOEA ya implementa ToT + ReAct. Esta skill añade reflexión post-mortem y backtracking cuando precision < 99.9%."
+      }
+    ],
+    "anti_patterns_industry": [
+      "Prompt sprawl: demasiadas instrucciones no estructuradas que degradan adherencia",
+      "God Agent: un solo agente monolítico que intenta hacer todo sin modularización",
+      "Stateless chains: cadenas de prompts sin persistencia de estado entre pasos",
+      "Schema drift: inconsistencia de formatos entre componentes del mismo sistema",
+      "Circular dependencies: skills que se invocan mutuamente sin DAG definido",
+      "Over-instrumentation: telemetría excesiva que consume tokens sin aportar valor",
+      "Premature optimization: optimizar skills que aún no han sido validadas en producción"
+    ]
+  },
+  "architectural_standards": {
+    "description": "Estándares obligatorios que todo componente del ecosistema .agent/ debe cumplir.",
+    "file_standards": {
+      "format": "JSON exclusively",
+      "schema_version": "Every JSON must declare $schema field",
+      "encoding": "UTF-8 without BOM",
+      "indentation": "2 spaces",
+      "naming": "snake_case for keys, snake_case for filenames",
+      "paths": "Always relative to workspace root (./)",
+      "max_file_size": "50KB per JSON (signal of poor granularity if exceeded)"
+    },
+    "skill_standards": {
+      "required_fields": ["$schema", "metadata", "title", "purpose"],
+      "metadata_required": ["name", "version", "description", "created_at", "updated_at"],
+      "versioning": "semver (major.minor.patch)",
+      "naming_convention": "Skill names in snake_case, titles in SCREAMING_CASE",
+      "dependency_rule": "Skills must form a DAG (Directed Acyclic Graph). No circular dependencies.",
+      "single_responsibility": "Each skill does ONE thing supremely well. If it does two, split it.",
+      "composability": "Skills must be composable via the pipeline cognitivo without tight coupling."
+    },
+    "workflow_standards": {
+      "required_fields": ["$schema", "metadata", "title", "purpose", "phases/steps"],
+      "phase_definition": "Each phase must declare: order, name, skill, and action",
+      "idempotency": "Workflows must be resumable. Each phase should be independently re-executable.",
+      "error_handling": "Every workflow must define behavior on phase failure"
+    },
+    "memory_standards": {
+      "working": "Overwrite per session. Max 10KB.",
+      "episodic": "Append-only with decay. Max 50 detailed episodes.",
+      "semantic": "Append-only, never delete. Deduplicate rules by semantic similarity.",
+      "consolidation": "Mandatory at session close. No exceptions."
+    },
+    "dependency_topology": {
+      "description": "El grafo de dependencias del ecosistema ERIC debe ser un DAG estricto.",
+      "validation_rule": "Antes de crear o modificar cualquier skill, validar que no se introduce un ciclo en el grafo.",
+      "current_topology": {
+        "layer_0_foundation": ["brain", "make_json"],
+        "layer_1_cognition": ["adaptive_learning", "hyper_specialist"],
+        "layer_2_governance": ["agentic_architect", "memory_engine"],
+        "layer_3_orchestration": ["master_orchestrator"],
+        "layer_4_domain": ["maf_brain", "maf_architect", "maf_scout", "maf_product", "maf_ux", "maf_agile"],
+        "layer_5_execution": ["architect_node", "growth_node", "ux_reconstructor_2.0"]
+      },
+      "flow_rule": "Dependencies only flow DOWNWARD. Layer N can depend on Layer N-1 or lower. NEVER upward."
+    }
+  },
+  "optimization_protocols": {
+    "description": "Protocolos de optimización que esta skill aplica cuando se invoca.",
+    "structural_audit": {
+      "trigger": "Antes de crear/modificar cualquier skill o workflow",
+      "checks": [
+        "¿Cumple con file_standards?",
+        "¿Cumple con skill_standards o workflow_standards?",
+        "¿Introduce dependencias circulares?",
+        "¿Viola single_responsibility?",
+        "¿El naming es consistente con el ecosistema?",
+        "¿Tiene campos redundantes con skills existentes?",
+        "¿El JSON es parseable y < 50KB?"
+      ]
+    },
+    "cognitive_load_optimization": {
+      "trigger": "Cuando el pipeline cognitivo excede 12 fases o una skill excede 6 fases de ejecución",
+      "actions": [
+        "Fusionar fases semánticamente redundantes",
+        "Eliminar fases que no aportan al output final",
+        "Externalizar fases especializadas a sub-skills dedicadas"
+      ]
+    },
+    "token_economy": {
+      "trigger": "Siempre activo",
+      "principle": "Cada byte en un JSON de skill consume tokens de contexto al ser cargado. Maximizar densidad semántica por token.",
+      "actions": [
+        "Eliminar descripciones redundantes que repiten el title o purpose",
+        "Usar arrays de strings en lugar de arrays de objetos cuando el objeto tiene un solo campo",
+        "Preferir keys cortos y descriptivos: 'desc' no, 'description' sí (claridad > brevedad en keys)"
+      ]
+    },
+    "evolution_protocol": {
+      "trigger": "Cuando semantic_memory acumula 3+ genetic_rules sobre el mismo dominio",
+      "actions": [
+        "Evaluar si las reglas genéticas sugieren una nueva skill o la refactorización de una existente",
+        "Proponer mutación al manifest.json si se detecta ineficiencia en el pipeline",
+        "Actualizar dependency_topology si cambia la estructura del grafo"
+      ]
+    }
+  },
+  "invocation_rules": {
+    "mandatory_before": [
+      "Creación de cualquier nuevo skill.json",
+      "Modificación de manifest.json o core.json",
+      "Creación o modificación de cualquier workflow",
+      "Refactorización de la estructura .agent/",
+      "Cualquier operación de auto-mejora del sistema"
+    ],
+    "mandatory_after": [
+      "Validar integridad del grafo de dependencias",
+      "Verificar que index.json refleja el estado actual",
+      "Confirmar que no hay schema drift entre componentes"
+    ]
+  },
+  "telemetry": "[⚙️ INVOCANDO SKILL: agentic_architect]",
+  "tags": ["architecture", "optimization", "governance", "standards", "meta_engineering", "supreme_authority"]
+}

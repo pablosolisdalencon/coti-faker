@@ -1,0 +1,41 @@
+{
+  "$schema": "skill_v1",
+  "metadata": {
+    "name": "ux_reconstructor_2.0",
+    "version": "2.0.0",
+    "description": "Exact UI Mirroring - Replicar conceptos visuales en código Tailwind/React con precisión 1:1.",
+    "created_at": "2026-04-30T03:29:00Z",
+    "updated_at": "2026-04-30T03:29:00Z"
+  },
+  "title": "UX RECONSTRUCTOR 2.0: Exact UI Mirroring",
+  "purpose": "Replicar cualquier concepto visual o imagen en código Tailwind/React funcional y de alta fidelidad con precisión 1:1.",
+  "protocols": [
+    {
+      "phase": 1,
+      "name": "VISUAL EXTRACTION",
+      "layers": {
+        "base_layer": "Texture (Grain, Gradients, Noise)",
+        "atmospheric_layer": "Glows, Blurs, Beams",
+        "grid_layer": "Layout (Bento, Sidebar, Float)",
+        "detail_layer": "Icons, Border-glows, Type-spacing"
+      }
+    },
+    {
+      "phase": 2,
+      "name": "ACSS ALIGNMENT",
+      "actions": ["Map all extracted values to consistent design system (Adaptive CSS)"]
+    },
+    {
+      "phase": 3,
+      "name": "FIDELITY CHECK",
+      "actions": ["Contrast generated UI against concept and iterate until WOW factor achieved"]
+    }
+  ],
+  "tactical_patterns": [
+    "backdrop-filter: blur() for glassmorphism",
+    "mask-image for custom parchment/scanned edge effects",
+    "drop-shadow combined with text-shadow for holographic text"
+  ],
+  "dependencies": ["maf_ux"],
+  "tags": ["ui_mirroring", "pixel_perfect", "design_system", "reconstruction"]
+}

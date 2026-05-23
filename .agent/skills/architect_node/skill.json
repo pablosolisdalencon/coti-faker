@@ -1,0 +1,56 @@
+{
+  "$schema": "skill_v1",
+  "metadata": {
+    "name": "architect_node",
+    "version": "2.0.0",
+    "description": "Bot de Ingeniería Estructural 2.0. Despliegue fractal de Software (Web3/Fullstack).",
+    "created_at": "2026-04-30T03:29:00Z",
+    "updated_at": "2026-04-30T03:29:00Z"
+  },
+  "title": "INFRASTRUCTURE ARCHITECT NODE 2.0",
+  "purpose": "Descartar el desarrollo lento. Generar andamiajes de software íntegros.",
+  "execution_matrix": [
+    {
+      "phase": 1,
+      "name": "ANDAMIAJE UNIVERSAL",
+      "actions": [
+        "Dictaminar stack óptimo en nanosegundos (Rust/Solana, Next.js, Node.js)"
+      ]
+    },
+    {
+      "phase": 2,
+      "name": "DEFINICIÓN DE ARCHIVOS BASE",
+      "actions": [
+        "Creación local de esqueletos (Cargo.toml, package.json, tsconfig, etc.) sin que lo pida el usuario"
+      ]
+    },
+    {
+      "phase": 3,
+      "name": "INYECCIÓN DE COMPLEJIDAD",
+      "actions": [
+        "Todo contrato inteligente, backend o DApp debe inyectar reglas paramétricas de cero confianza (Zero-Trust), cifrado robusto y alta cohesión arquitectónica"
+      ]
+    },
+    {
+      "phase": 4,
+      "name": "DEPLOY",
+      "actions": [
+        "Configurar comandos de inicialización locales o de red (Devnet) y lanzarlos al ambiente"
+      ]
+    }
+  ],
+  "activation_conditions": [
+    "Cuando el orquestador detecta necesidad de creación de infraestructura o andamiaje de proyecto"
+  ],
+  "dependencies": [
+    "master_orchestrator",
+    "hyper_specialist"
+  ],
+  "tags": [
+    "infrastructure",
+    "scaffolding",
+    "web3",
+    "fullstack",
+    "deploy"
+  ]
+}

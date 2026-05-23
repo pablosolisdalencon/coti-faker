@@ -1,0 +1,43 @@
+{
+  "$id": "workflow_v1",
+  "type": "object",
+  "description": "Esquema canónico para todo workflow del ecosistema ERIC.",
+  "required": ["$schema", "metadata", "title", "purpose"],
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "const": "workflow_v1"
+    },
+    "metadata": {
+      "type": "object",
+      "required": ["name", "version", "description", "created_at", "updated_at"],
+      "properties": {
+        "name": { "type": "string", "pattern": "^[a-z][a-z0-9_]*$" },
+        "version": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$" },
+        "description": { "type": "string" },
+        "created_at": { "type": "string", "format": "date-time" },
+        "updated_at": { "type": "string", "format": "date-time" },
+        "slash_command": { "type": "string", "pattern": "^/[a-z_]+$" }
+      }
+    },
+    "title": { "type": "string" },
+    "purpose": { "type": "string" },
+    "phases": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["order", "name"],
+        "properties": {
+          "order": { "type": "integer", "minimum": 1 },
+          "name": { "type": "string" },
+          "command": { "type": "string" },
+          "skill": { "type": ["string", "null"] },
+          "input": { "type": "string" },
+          "output": { "type": "string" }
+        }
+      }
+    },
+    "steps": { "type": "array" },
+    "required_skills": { "type": "array", "items": { "type": "string" } }
+  }
+}

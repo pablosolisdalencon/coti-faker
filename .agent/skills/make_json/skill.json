@@ -1,0 +1,79 @@
+{
+  "$schema": "skill_v1",
+  "metadata": {
+    "name": "make_json",
+    "version": "2.0.0",
+    "description": "Motor de Escritura y Validación JSON. Serialización determinista con validación contra schemas reales.",
+    "created_at": "2026-04-30T03:29:00Z",
+    "updated_at": "2026-04-30T04:41:00Z"
+  },
+  "title": "MAKE-JSON (MOTOR DE SERIALIZACIÓN Y VALIDACIÓN)",
+  "purpose": "Producir documentos JSON con precisión absoluta y validarlos contra los schemas reales en .agent/schemas/. Cada JSON que se crea o modifica DEBE pasar validación antes de considerarse completo.",
+  "execution_matrix": [
+    {
+      "phase": 1,
+      "name": "ANÁLISIS PRE-SERIALIZACIÓN",
+      "codename": "SCHEMA_FIRST",
+      "actions": [
+        "Identificar qué tipo de documento se está creando (skill, workflow, memory, system)",
+        "Cargar el schema correspondiente desde .agent/schemas/",
+        "Mapear campos required vs opcionales del schema"
+      ]
+    },
+    {
+      "phase": 2,
+      "name": "ESCRITURA IMPERATIVA",
+      "codename": "ZERO_DEFECT_PROTOCOL",
+      "rules": [
+        "Comillas dobles exclusivamente",
+        "Sin trailing commas",
+        "Valores null explícitos",
+        "Tipos estrictos (bool, number, array, object)",
+        "Indentación 2 espacios",
+        "UTF-8 sin BOM",
+        "Claves en snake_case",
+        "Fechas ISO-8601 con timezone UTC",
+        "Rutas con forward-slash y relativas a ./"
+      ]
+    },
+    {
+      "phase": 3,
+      "name": "VALIDACIÓN CONTRA SCHEMA",
+      "codename": "SCHEMA_VALIDATION",
+      "actions": [
+        "Parseo con JSON.parse() para verificar sintaxis",
+        "Validar $schema field existe y apunta a schema conocido",
+        "Validar contra el schema real en .agent/schemas/",
+        "Reportar campos faltantes, tipos incorrectos y violaciones de pattern"
+      ]
+    },
+    {
+      "phase": 4,
+      "name": "VALIDACIÓN DE INTEGRIDAD ECOSISTÉMICA",
+      "codename": "ECOSYSTEM_CHECK",
+      "actions": [
+        "Si es una skill: verificar que está registrada en index.json",
+        "Si es una skill: verificar que dependencies existen en el ecosistema",
+        "Si es un workflow: verificar que required_skills existen",
+        "Ejecutar node .agent/validate.js para validación completa del ecosistema"
+      ]
+    }
+  ],
+  "validator": {
+    "script": ".agent/validate.js",
+    "command": "node .agent/validate.js",
+    "description": "Script AJV que valida todos los JSON del ecosistema contra sus schemas declarados"
+  },
+  "anti_patterns": [
+    "JSON con comentarios",
+    "Trailing commas",
+    "Mezclar camelCase y snake_case",
+    "Strings multilínea",
+    "Valores undefined, NaN o Infinity",
+    "Números con leading zeros",
+    "Declarar $schema sin que exista el archivo de schema real",
+    "output como array cuando el schema define string"
+  ],
+  "dependencies": [],
+  "tags": ["json", "serialization", "validation", "zero_defect", "schema"]
+}

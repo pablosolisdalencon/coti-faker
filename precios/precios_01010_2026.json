@@ -1,0 +1,43 @@
+{
+  "$schema": "material_prices_v1",
+  "metadata": {
+    "description": "Recopilación de precios de materiales para cotización Nº 01010/2026 - Receptor: Sr. Alexis Miranda",
+    "currency": "CLP",
+    "country": "Chile",
+    "last_updated": "2026-05-23T02:37:15.331Z"
+  },
+  "materials": [
+    {
+      "id": "prices_get_001",
+      "category": "Obra Gruesa",
+      "name": "Cemento Melón Especial 25kg",
+      "price_clp": 5180,
+      "unit": "saco",
+      "supplier": "Sodimac"
+    },
+    {
+      "id": "prices_get_002",
+      "category": "Obra Gruesa",
+      "name": "Cemento Polpaico Especial 25kg",
+      "price_clp": 4890,
+      "unit": "saco",
+      "supplier": "Sodimac"
+    },
+    {
+      "id": "prices_get_003",
+      "category": "Terminaciones y Pintura",
+      "name": "Yeso Carta Volcán 20kg",
+      "price_clp": 5490,
+      "unit": "saco",
+      "supplier": "Sodimac"
+    },
+    {
+      "id": "prices_get_004",
+      "category": "Terminaciones y Pintura",
+      "name": "Pasta de Muro Interior 1 Tineta Sipa",
+      "price_clp": 19990,
+      "unit": "tineta",
+      "supplier": "Sodimac"
+    }
+  ]
+}

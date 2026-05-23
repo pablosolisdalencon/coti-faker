@@ -1,0 +1,19 @@
+{
+  "$schema": "material_prices_v1",
+  "metadata": {
+    "description": "Recopilación de precios de materiales para cotización Nº 1216 - Receptor: CONDOMINIO ANDES lll",
+    "currency": "CLP",
+    "country": "Chile",
+    "last_updated": "2026-05-23T02:37:15.333Z"
+  },
+  "materials": [
+    {
+      "id": "prices_get_001",
+      "category": "Obra Gruesa",
+      "name": "Malla Electrosoldada C-92 2.6x4.8 m",
+      "price_clp": 28990,
+      "unit": "un",
+      "supplier": "Sodimac"
+    }
+  ]
+}

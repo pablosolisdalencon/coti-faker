@@ -1,0 +1,58 @@
+{
+  "$schema": "workflow_v1",
+  "metadata": {
+    "name": "requirements_factory",
+    "version": "1.0.0",
+    "description": "Generador masivo autónomo de requerimientos y estudio de mercado para todas las aplicaciones (Mass Requirements Factory)",
+    "created_at": "2026-04-30T03:29:00Z",
+    "updated_at": "2026-04-30T03:29:00Z",
+    "slash_command": "/requirements_factory"
+  },
+  "title": "Generador Autónomo de Requerimientos (Mass Requirements Factory)",
+  "purpose": "Leer manifiesto del ecosistema, iterar sobre TODAS las aplicaciones y crear documentación fundacional basándose en investigación web en tiempo real.",
+  "prerequisites": {
+    "manifest_path": "./README.md",
+    "output_directory": "./ARTEFACTOS/REQUERIMIENTOS"
+  },
+  "steps": [
+    {
+      "order": 1,
+      "name": "Extracción del Listado",
+      "actions": ["Leer tabla de aplicaciones de README.md", "Almacenar nombre y descripción de cada una"]
+    },
+    {
+      "order": 2,
+      "name": "Iteración Autónoma por Aplicación",
+      "substeps": [
+        {
+          "id": "A",
+          "name": "Estudio de Mercado e Identificación de Funcionalidades",
+          "actions": [
+            "Estudio de Mercado: search_web para competidores directos",
+            "Top 5 Populares (Core): funcionalidades fundamentales de las 10 apps más exitosas",
+            "Top 5 Nicho/Ausentes (Gaps): peticiones no cubiertas de foros y tendencias",
+            "Generar estudioMercado[NombreApp].md"
+          ]
+        },
+        {
+          "id": "B",
+          "name": "Ingeniería de Producto (10 Funcionalidades)",
+          "actions": [
+            "Consolidar 10 funcionalidades (5 Populares + 5 Gaps)",
+            "Para cada una: requerimiento específico, reglas de negocio, historias de usuario, propuesta gráfica/UX",
+            "Generar requerimientos[NombreApp].md"
+          ]
+        }
+      ]
+    }
+  ],
+  "output_per_app": [
+    "estudioMercado[NombreApp].md",
+    "requerimientos[NombreApp].md"
+  ],
+  "required_skills": [
+    "maf_scout",
+    "maf_product",
+    "hyper_specialist"
+  ]
+}

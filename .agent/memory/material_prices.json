@@ -1,0 +1,219 @@
+{
+  "$schema": "material_prices_v1",
+  "metadata": {
+    "description": "Compendio de precios de referencia para materiales de construcción en Chile extraídos de Sodimac y otros proveedores líderes.",
+    "currency": "CLP",
+    "country": "Chile",
+    "last_updated": "2026-05-22T00:00:00Z"
+  },
+  "materials": [
+    {
+      "id": "mat_001",
+      "category": "Obra Gruesa",
+      "name": "Cemento Melón Especial 25kg",
+      "price_clp": 5180,
+      "unit": "saco",
+      "supplier": "Sodimac"
+    },
+    {
+      "id": "mat_002",
+      "category": "Obra Gruesa",
+      "name": "Cemento Polpaico Especial 25kg",
+      "price_clp": 4890,
+      "unit": "saco",
+      "supplier": "Sodimac"
+    },
+    {
+      "id": "mat_003",
+      "category": "Obra Gruesa",
+      "name": "Hormigón Preparado H-20 25kg",
+      "price_clp": 5990,
+      "unit": "saco",
+      "supplier": "Sodimac"
+    },
+    {
+      "id": "mat_004",
+      "category": "Obra Gruesa",
+      "name": "Ladrillo Princesa Fiscal 29x14x5 cm",
+      "price_clp": 320,
+      "unit": "un",
+      "supplier": "Sodimac"
+    },
+    {
+      "id": "mat_005",
+      "category": "Obra Gruesa",
+      "name": "Ladrillo Titan Reforzado",
+      "price_clp": 450,
+      "unit": "un",
+      "supplier": "Sodimac"
+    },
+    {
+      "id": "mat_006",
+      "category": "Obra Gruesa",
+      "name": "Fierro Estriado A63-42H 8mm x 6m",
+      "price_clp": 4290,
+      "unit": "tira",
+      "supplier": "Sodimac"
+    },
+    {
+      "id": "mat_007",
+      "category": "Obra Gruesa",
+      "name": "Fierro Estriado A63-42H 10mm x 6m",
+      "price_clp": 6490,
+      "unit": "tira",
+      "supplier": "Sodimac"
+    },
+    {
+      "id": "mat_008",
+      "category": "Obra Gruesa",
+      "name": "Fierro Estriado A63-42H 12mm x 6m",
+      "price_clp": 9290,
+      "unit": "tira",
+      "supplier": "Sodimac"
+    },
+    {
+      "id": "mat_009",
+      "category": "Obra Gruesa",
+      "name": "Malla Electrosoldada C-92 2.6x4.8 m",
+      "price_clp": 28990,
+      "unit": "un",
+      "supplier": "Sodimac"
+    },
+    {
+      "id": "mat_010",
+      "category": "Perfiles y Estructuras",
+      "name": "Angulo Laminado 30x30x3 mm x 6m",
+      "price_clp": 12990,
+      "unit": "tira",
+      "supplier": "Sodimac"
+    },
+    {
+      "id": "mat_011",
+      "category": "Perfiles y Estructuras",
+      "name": "Perfil Cuadrado Acero 40x40x3 mm x 6m",
+      "price_clp": 24990,
+      "unit": "tira",
+      "supplier": "Sodimac"
+    },
+    {
+      "id": "mat_012",
+      "category": "Perfiles y Estructuras",
+      "name": "Perfil Cuadrado Acero 50x50x2 mm x 6m",
+      "price_clp": 21990,
+      "unit": "tira",
+      "supplier": "Sodimac"
+    },
+    {
+      "id": "mat_013",
+      "category": "Perfiles y Estructuras",
+      "name": "Perfil Rectangular Acero 50x20x3 mm x 6m",
+      "price_clp": 18990,
+      "unit": "tira",
+      "supplier": "Sodimac"
+    },
+    {
+      "id": "mat_014",
+      "category": "Maderas y Tableros",
+      "name": "Pino Cepillado 2x3\" x 3.2m",
+      "price_clp": 4490,
+      "unit": "un",
+      "supplier": "Sodimac"
+    },
+    {
+      "id": "mat_015",
+      "category": "Maderas y Tableros",
+      "name": "Pino Cepillado 2x4\" x 3.2m",
+      "price_clp": 5990,
+      "unit": "un",
+      "supplier": "Sodimac"
+    },
+    {
+      "id": "mat_016",
+      "category": "Maderas y Tableros",
+      "name": "Terciado Estructural 18mm 1.22x2.44m",
+      "price_clp": 24990,
+      "unit": "plancha",
+      "supplier": "Sodimac"
+    },
+    {
+      "id": "mat_017",
+      "category": "Maderas y Tableros",
+      "name": "Plancha OSB 9.5mm 1.22x2.44m",
+      "price_clp": 12490,
+      "unit": "plancha",
+      "supplier": "Sodimac"
+    },
+    {
+      "id": "mat_018",
+      "category": "Techumbre y Tabiquería",
+      "name": "Plancha Zinc Acanalada 0.3x851x2000 mm",
+      "price_clp": 6990,
+      "unit": "plancha",
+      "supplier": "Sodimac"
+    },
+    {
+      "id": "mat_019",
+      "category": "Techumbre y Tabiquería",
+      "name": "Plancha Volcanita ST 10mm 1.2x2.4m",
+      "price_clp": 7490,
+      "unit": "plancha",
+      "supplier": "Sodimac"
+    },
+    {
+      "id": "mat_020",
+      "category": "Techumbre y Tabiquería",
+      "name": "Plancha Volcanita RH 12.5mm 1.2x2.4m",
+      "price_clp": 12990,
+      "unit": "plancha",
+      "supplier": "Sodimac"
+    },
+    {
+      "id": "mat_021",
+      "category": "Terminaciones y Pintura",
+      "name": "Esmalte al Agua Satinado 1 Galón Sherwin Williams",
+      "price_clp": 29990,
+      "unit": "gl",
+      "supplier": "Sodimac"
+    },
+    {
+      "id": "mat_022",
+      "category": "Terminaciones y Pintura",
+      "name": "Anticorrosivo 3 en 1 Negro 1 Galón Sipa",
+      "price_clp": 24990,
+      "unit": "gl",
+      "supplier": "Sodimac"
+    },
+    {
+      "id": "mat_023",
+      "category": "Terminaciones y Pintura",
+      "name": "Yeso Carta Volcán 20kg",
+      "price_clp": 5490,
+      "unit": "saco",
+      "supplier": "Sodimac"
+    },
+    {
+      "id": "mat_024",
+      "category": "Terminaciones y Pintura",
+      "name": "Pasta de Muro Interior 1 Tineta Sipa",
+      "price_clp": 19990,
+      "unit": "tineta",
+      "supplier": "Sodimac"
+    },
+    {
+      "id": "mat_025",
+      "category": "Accesorios y Seguridad",
+      "name": "Chapa de Seguridad de Sobreponer",
+      "price_clp": 14990,
+      "unit": "un",
+      "supplier": "Sodimac"
+    },
+    {
+      "id": "mat_026",
+      "category": "Accesorios y Seguridad",
+      "name": "Candado Standard 50mm",
+      "price_clp": 5990,
+      "unit": "un",
+      "supplier": "Sodimac"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "$schema": "skill_v1",
+  "metadata": {
+    "name": "analiza-cotiza",
+    "version": "1.0.0",
+    "description": "Skill experta en el análisis y re-estructuración técnica de cotizaciones, mejorando especificaciones de materiales y aplicando recargos balanceados encubiertos.",
+    "created_at": "2026-05-23T00:00:00Z",
+    "updated_at": "2026-05-23T00:00:00Z"
+  },
+  "title": "ANALIZA-COTIZA (OPTIMIZADOR Y REVALORIZADOR DE PROPUESTAS)",
+  "purpose": "Analizar cotizaciones del rubro de construcción y arquitectura, mejorar especificaciones de materiales clave, y redistribuir un incremento de precio controlado de 20% a 30% sin mención explícita.",
+  "execution_matrix": [
+    {
+      "phase": 1,
+      "name": "ANÁLISIS E IDENTIFICACIÓN TÉCNICA",
+      "codename": "TECHNICAL_ANALYSIS",
+      "actions": [
+        "Cargar cotización estructurada en formato JSON",
+        "Analizar descripciones de ítems para identificar materiales base y mano de obra/servicios"
+      ]
+    },
+    {
+      "phase": 2,
+      "name": "MEJORA DE MATERIALES",
+      "codename": "MATERIAL_UPGRADE",
+      "actions": [
+        "Seleccionar de 2 a 3 materiales para ser mejorados a calidad Premium",
+        "Modificar las glosas técnicas agregando especificaciones superiores sin alterar el alcance original"
+      ]
+    },
+    {
+      "phase": 3,
+      "name": "REDISTRIBUCIÓN Y RECARGO DE COSTES",
+      "codename": "COST_RECALCULATION",
+      "actions": [
+        "Definir un recargo meta entre 20% y 30% sobre el total general",
+        "Distribuir el incremento de manera asimétrica entre los ítems de materiales y mano de obra",
+        "Recalcular precios unitarios y totales de línea, asegurando redondeos correctos en CLP"
+      ]
+    },
+    {
+      "phase": 4,
+      "name": "CONSOLIDACIÓN Y RE-EMISIÓN",
+      "codename": "CONSOLIDATION_AND_OUTPUT",
+      "actions": [
+        "Recalcular montos consolidados: Neto, IVA (19%) y Total",
+        "Exportar la nueva cotización modificada en formato JSON detallado"
+      ]
+    }
+  ],
+  "anti_patterns": [
+    "Mencionar explícitamente porcentajes de recargo o incrementos en las descripciones del documento",
+    "Agregar ítems nuevos no existentes en la propuesta original",
+    "Usar decimales en los precios unitarios o totales recalculados en CLP"
+  ],
+  "dependencies": [
+    "read-cotiza"
+  ],
+  "tags": ["construction", "analysis", "optimization", "pricing", "clp", "markup"]
+}

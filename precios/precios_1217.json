@@ -1,0 +1,51 @@
+{
+  "$schema": "material_prices_v1",
+  "metadata": {
+    "description": "Recopilación de precios de materiales para cotización Nº 1217 - Receptor: CONDOMINIO ANDES lll",
+    "currency": "CLP",
+    "country": "Chile",
+    "last_updated": "2026-05-23T02:37:15.333Z"
+  },
+  "materials": [
+    {
+      "id": "prices_get_001",
+      "category": "Obra Gruesa",
+      "name": "Malla Electrosoldada C-92 2.6x4.8 m",
+      "price_clp": 28990,
+      "unit": "un",
+      "supplier": "Sodimac"
+    },
+    {
+      "id": "prices_get_002",
+      "category": "Perfiles y Estructuras",
+      "name": "Perfil Cuadrado Acero 40x40x3 mm x 6m",
+      "price_clp": 24990,
+      "unit": "tira",
+      "supplier": "Sodimac"
+    },
+    {
+      "id": "prices_get_003",
+      "category": "Perfiles y Estructuras",
+      "name": "Perfil Cuadrado Acero 50x50x2 mm x 6m",
+      "price_clp": 21990,
+      "unit": "tira",
+      "supplier": "Sodimac"
+    },
+    {
+      "id": "prices_get_004",
+      "category": "Perfiles y Estructuras",
+      "name": "Perfil Rectangular Acero 50x20x3 mm x 6m",
+      "price_clp": 18990,
+      "unit": "tira",
+      "supplier": "Sodimac"
+    },
+    {
+      "id": "prices_get_005",
+      "category": "Accesorios y Seguridad",
+      "name": "Chapa de Seguridad de Sobreponer",
+      "price_clp": 14990,
+      "unit": "un",
+      "supplier": "Sodimac"
+    }
+  ]
+}

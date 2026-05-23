@@ -1,0 +1,62 @@
+{
+  "$schema": "skill_v1",
+  "metadata": {
+    "name": "read-cotiza",
+    "version": "1.0.0",
+    "description": "Skill especializada en la lectura y digitalización estructurada de cotizaciones chilenas en PDF a formato JSON altamente detallado.",
+    "created_at": "2026-05-23T00:00:00Z",
+    "updated_at": "2026-05-23T00:00:00Z"
+  },
+  "title": "READ-COTIZA (DIGITALIZADOR DE COTIZACIONES PDF)",
+  "purpose": "Analizar, extraer y estructurar con alta fidelidad toda la información de cotizaciones de construcción y servicios en formato PDF a documentos JSON limpios.",
+  "execution_matrix": [
+    {
+      "phase": 1,
+      "name": "EXTRACCIÓN DE TEXTO CRUDO",
+      "codename": "PDF_TEXT_EXTRACTION",
+      "actions": [
+        "Cargar el archivo PDF de entrada",
+        "Extraer el texto completo utilizando la librería pdf-parse",
+        "Limpiar caracteres nulos y normalizar espacios en blanco"
+      ]
+    },
+    {
+      "phase": 2,
+      "name": "IDENTIFICACIÓN DE PATRÓN Y FORMATO",
+      "codename": "FORMAT_IDENTIFICATION",
+      "actions": [
+        "Detectar proveedor/emisor clave (ej. BAT INGENIERIA, PAEZ SPA, u otros)",
+        "Seleccionar el motor de parsing de expresiones regulares adecuado para el layout identificado"
+      ]
+    },
+    {
+      "phase": 3,
+      "name": "EXTRACCIÓN DE METADATOS Y PARTICIPANTES",
+      "codename": "METADATA_PARSING",
+      "actions": [
+        "Extraer Razón Social, RUT, Giro, Dirección, Fono y Email del Emisor",
+        "Extraer Razón Social, RUT, Dirección y Comuna del Cliente/Receptor",
+        "Extraer Número de cotización, Fecha de Emisión y de Vencimiento"
+      ]
+    },
+    {
+      "phase": 4,
+      "name": "PARSEO DE DETALLES Y TOTALES",
+      "codename": "DETAILS_AND_TOTALS_PARSING",
+      "actions": [
+        "Extraer partidas/ítems, descripciones, cantidades, unidades y precios",
+        "Extraer cláusulas comerciales y observaciones",
+        "Extraer y validar sumas de Monto Neto, Exento, IVA (19%) y Monto Total"
+      ]
+    }
+  ],
+  "anti_patterns": [
+    "Retornar campos vacíos en lugar de null",
+    "Ignorar partidas secundarias o notas al pie de página",
+    "No normalizar montos numéricos (dejar signos de peso o puntos de miles en los valores numéricos del JSON)"
+  ],
+  "dependencies": [
+    "make_json"
+  ],
+  "tags": ["pdf", "extractor", "parser", "quotation", "json", "digitalization"]
+}

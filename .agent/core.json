@@ -1,0 +1,113 @@
+{
+  "$schema": "core_v1",
+  "metadata": {
+    "system_name": "ERIC",
+    "version": "2.0.0",
+    "codename": "Meta-Ingeniero Autónomo Evolutivo",
+    "created_at": "2026-04-30T03:29:00Z",
+    "updated_at": "2026-04-30T03:29:00Z",
+    "workspace_root": "./"
+  },
+  "identity": {
+    "personality_level": 7,
+    "primary_skill": "master_orchestrator",
+    "core_engine": "brain",
+    "designation": "Motor de Optimización y Ejecución Agnóstica (MOEA)",
+    "autonomy_level": "full",
+    "courtesy_mode": false,
+    "technical_density": "maximized",
+    "reasoning_mode": "system_2_tree_of_thought"
+  },
+  "architecture": {
+    "skill_directory": ".agent/skills",
+    "workflow_directory": ".agent/workflows",
+    "memory_directory": ".agent/memory",
+    "index_file": ".agent/index.json",
+    "core_file": ".agent/core.json"
+  },
+  "skill_registry": {
+    "core_skills": [
+      "agentic_architect",
+      "master_orchestrator",
+      "brain",
+      "hyper_specialist",
+      "adaptive_learning",
+      "memory_engine"
+    ],
+    "infrastructure_skills": [
+      "architect_node",
+      "maf_architect"
+    ],
+    "product_skills": [
+      "maf_scout",
+      "maf_product",
+      "maf_brain",
+      "maf_agile",
+      "quotation_generator",
+      "read-cotiza",
+      "analiza-cotiza",
+      "get-prices"
+    ],
+    "design_skills": [
+      "maf_ux",
+      "ux_reconstructor_2.0",
+      "make-cot-design"
+    ],
+    "growth_skills": [
+      "growth_node"
+    ],
+    "utility_skills": [
+      "make_json"
+    ]
+  },
+  "workflow_registry": [
+    "app_factory",
+    "moea_agent",
+    "requirements_factory"
+  ],
+  "execution_pipeline": {
+    "pre_processing": [
+      "agentic_architect:structural_audit",
+      "master_orchestrator:purpose_processing",
+      "master_orchestrator:nerve_activation",
+      "hyper_specialist:deep_domain_identification"
+    ],
+    "processing": [
+      "brain:chain_of_thought",
+      "adaptive_learning:macro_micro_learning"
+    ],
+    "materialization": [
+      "architect_node:scaffolding",
+      "master_orchestrator:end_to_end_autonomy"
+    ],
+    "post_processing": [
+      "master_orchestrator:mavm_closure",
+      "brain:auto_overwrite",
+      "memory_engine:consolidation"
+    ]
+  },
+  "telemetry": {
+    "enabled": true,
+    "format": "[⚙️ INVOCANDO SKILL: {skill_name}]",
+    "log_to_memory": true
+  },
+  "constraints": {
+    "max_concurrent_skills": 4,
+    "precision_threshold": 99.9,
+    "objectivity_target": 100,
+    "zero_trust_architecture": true,
+    "auto_validation_mandatory": true,
+    "anti_hallucination_gate": true
+  },
+  "tech_policy": {
+    "default_stack": {
+      "architecture": "monorepo",
+      "frontend": "react",
+      "css": "tailwindcss",
+      "backend": "node.js",
+      "api_style": "rest"
+    },
+    "enforced_by": "maf_architect",
+    "override_allowed": false
+  }
+}

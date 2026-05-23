@@ -1,0 +1,45 @@
+{
+  "$schema": "skill_v1",
+  "metadata": {
+    "name": "get-prices",
+    "version": "1.0.0",
+    "description": "Skill especializada en la recopilación de precios de materiales desde Sodimac y otros proveedores líderes en Chile.",
+    "created_at": "2026-05-23T00:00:00Z",
+    "updated_at": "2026-05-23T00:00:00Z"
+  },
+  "title": "GET-PRICES (RECOPILADOR DE PRECIOS DE MATERIALES)",
+  "purpose": "Analizar propuestas económicas, identificar los materiales requeridos, consultar sus precios en Sodimac/otros proveedores y guardar los resultados estructurados.",
+  "execution_matrix": [
+    {
+      "phase": 1,
+      "name": "ANÁLISIS DE MATERIALES REQUERIDOS",
+      "codename": "EXTRACT_MATERIALS",
+      "actions": [
+        "Cargar el JSON o ruta de la propuesta económica de entrada",
+        "Analizar descripciones de partidas para identificar keywords de materiales"
+      ]
+    },
+    {
+      "phase": 2,
+      "name": "BÚSQUEDA Y RECOPILACIÓN DE PRECIOS",
+      "codename": "QUERY_PRICES",
+      "actions": [
+        "Buscar coincidencia exacta en base de precios local",
+        "Realizar búsquedas dinámicas para simular o consultar precios de Sodimac y otros proveedores líderes"
+      ]
+    },
+    {
+      "phase": 3,
+      "name": "PERSISTENCIA Y ESTRUCTURACIÓN",
+      "codename": "SAVE_PRICES",
+      "actions": [
+        "Estructurar los resultados bajo el esquema de precios del sistema",
+        "Guardar el JSON estructurado en el directorio precios/"
+      ]
+    }
+  ],
+  "dependencies": [
+    "make_json"
+  ],
+  "tags": ["sodimac", "precios", "materiales", "chile", "proveedores", "json"]
+}

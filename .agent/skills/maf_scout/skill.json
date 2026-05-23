@@ -1,0 +1,33 @@
+{
+  "$schema": "skill_v1",
+  "metadata": {
+    "name": "maf_scout",
+    "version": "1.0.0",
+    "description": "Agente de Inteligencia de Mercado y Descubrimiento de Nichos.",
+    "created_at": "2026-04-30T03:29:00Z",
+    "updated_at": "2026-04-30T03:29:00Z"
+  },
+  "title": "MAF SCOUT (MARKET INTEL)",
+  "purpose": "Identificar oportunidades de negocio de alta demanda y baja competencia mediante investigación activa y análisis de sentimientos.",
+  "execution_matrix": [
+    {
+      "phase": 1,
+      "name": "ESCANEO GLOBAL",
+      "actions": ["Buscar tendencias en SaaS niches, Product Hunt high growth, Mobile app trends"]
+    },
+    {
+      "phase": 2,
+      "name": "ANÁLISIS DE FRICCIÓN",
+      "actions": ["Buscar quejas en Reddit, App Store, Twitter usando queries de dolor de usuario"]
+    },
+    {
+      "phase": 3,
+      "name": "VALIDACIÓN DE DEMANDA",
+      "actions": ["Cruzar hallazgos con Google Trends o volúmenes de búsqueda"]
+    }
+  ],
+  "output": "market_discovery.md",
+  "golden_rule": "No inventar ideas. Cada recomendación DEBE estar respaldada por un link o snippet de un usuario real pidiendo una solución.",
+  "dependencies": [],
+  "tags": ["market_intel", "research", "niches", "maf"]
+}

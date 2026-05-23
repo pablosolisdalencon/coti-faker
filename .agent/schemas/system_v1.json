@@ -1,0 +1,138 @@
+{
+  "$id": "system_schemas",
+  "description": "Esquemas para archivos de sistema del ecosistema ERIC (core, index, manifest).",
+  "schemas": {
+    "core_v1": {
+      "type": "object",
+      "required": ["$schema", "metadata", "identity", "architecture", "skill_registry"],
+      "properties": {
+        "$schema": { "const": "core_v1" },
+        "metadata": {
+          "type": "object",
+          "required": ["system_name", "version", "workspace_root"],
+          "properties": {
+            "workspace_root": { "type": "string", "const": "./" }
+          }
+        },
+        "identity": {
+          "type": "object",
+          "required": ["personality_level", "primary_skill", "core_engine", "autonomy_level"]
+        },
+        "architecture": {
+          "type": "object",
+          "required": ["skill_directory", "workflow_directory", "memory_directory"]
+        },
+        "skill_registry": { "type": "object" },
+        "execution_pipeline": { "type": "object" },
+        "telemetry": { "type": "object" },
+        "constraints": { "type": "object" },
+        "tech_policy": { "type": "object" }
+      }
+    },
+    "index_v1": {
+      "type": "object",
+      "required": ["$schema", "metadata", "skills", "workflows", "memory"],
+      "properties": {
+        "$schema": { "const": "index_v1" },
+        "metadata": {
+          "type": "object",
+          "required": ["entry_count", "workspace_root"],
+          "properties": {
+            "workspace_root": { "type": "string", "const": "./" }
+          }
+        },
+        "skills": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name", "description", "category", "path"],
+            "properties": {
+              "name": { "type": "string" },
+              "description": { "type": "string" },
+              "category": { "type": "string", "enum": ["core", "infrastructure", "product", "design", "growth", "utility"] },
+              "path": { "type": "string", "pattern": "^\\.agent/" }
+            }
+          }
+        },
+        "workflows": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name", "description", "path"]
+          }
+        },
+        "memory": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name", "path"]
+          }
+        },
+        "category_summary": { "type": "object" }
+      }
+    },
+    "manifest_v1": {
+      "type": "object",
+      "required": ["$schema", "agent_os_version", "kernel_mode", "boot_sequence", "cognitive_engine", "capabilities_index", "critical_skills", "primary_workflow", "telemetry", "constraints"],
+      "properties": {
+        "$schema": { "const": "manifest_v1" },
+        "agent_os_version": { "type": "string" },
+        "kernel_mode": { "type": "string" },
+        "boot_sequence": {
+          "type": "object",
+          "required": ["identity", "workspace_mapping", "runtime_policies"],
+          "properties": {
+            "identity": {
+              "type": "object",
+              "required": ["name", "codename", "role", "designation", "personality_level", "owner", "sovereignty"]
+            },
+            "workspace_mapping": {
+              "type": "object",
+              "required": ["root", "skills", "workflows", "memory", "config", "index"]
+            },
+            "runtime_policies": {
+              "type": "object",
+              "required": ["read_priority", "output_format", "strict_mode", "courtesy_mode", "technical_density", "reasoning_mode", "system_1_response", "anti_hallucination_gate", "precision_threshold", "autonomy_level"]
+            }
+          }
+        },
+        "cognitive_engine": {
+          "type": "object",
+          "required": ["description", "phases"],
+          "properties": {
+            "phases": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["order", "name", "skill", "action"]
+              }
+            }
+          }
+        },
+        "capabilities_index": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "description", "endpoint", "auto_load"]
+          }
+        },
+        "critical_skills": {
+          "type": "object",
+          "required": ["description", "always_active", "on_demand"]
+        },
+        "primary_workflow": {
+          "type": "object",
+          "required": ["name", "path", "description", "auto_invoke", "reasoning_vectors", "mutation_protocol"]
+        },
+        "telemetry": {
+          "type": "object",
+          "required": ["enabled", "format", "mandatory", "log_to_memory"]
+        },
+        "constraints": {
+          "type": "object",
+          "required": ["max_concurrent_skills", "zero_trust_architecture", "auto_validation_mandatory", "never_hardcode_paths", "all_paths_relative_to_root"]
+        }
+      }
+    }
+  }
+}

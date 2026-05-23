@@ -1,0 +1,76 @@
+{
+  "$schema": "skill_v1",
+  "metadata": {
+    "name": "hyper_specialist",
+    "version": "2.0.0",
+    "description": "Motor de Experticia Unitaria. Adquiere autoridad global sobre UN dominio específico.",
+    "created_at": "2026-04-30T03:29:00Z",
+    "updated_at": "2026-04-30T04:36:00Z"
+  },
+  "title": "HYPER-SPECIALIST (EXCAVADORA DE EXPERTICIA)",
+  "purpose": "Adquirir autoridad absoluta sobre UN dominio técnico específico. Recibe un nodo conceptual (del pipeline o de adaptive_learning) y devuelve un Brief de Experticia con best practices, heurísticas críticas y anti-patrones.",
+  "input": "Un nodo conceptual o dominio técnico específico",
+  "output": "Brief de Experticia con heurísticas, best practices 2026, pitfalls y anti-patrones",
+  "execution_matrix": [
+    {
+      "phase": 1,
+      "name": "DESFRAGMENTACIÓN DE NICHO",
+      "codename": "DEEP_DOMAIN_IDENTIFICATION",
+      "actions": [
+        "Extraer entidades técnicas, librerías, paradigmas implícitos en el nodo recibido",
+        "Categorizar en Área de Experticia Extrema"
+      ]
+    },
+    {
+      "phase": 2,
+      "name": "INVESTIGACIÓN DE VANGUARDIA",
+      "codename": "STATE_OF_THE_ART",
+      "actions": [
+        "Búsqueda profunda en documentación oficial, repositorios líderes, whitepapers",
+        "Mapear Best Practices del año actual (2026) para evitar soluciones legacy"
+      ]
+    },
+    {
+      "phase": 3,
+      "name": "EXPERT GHOSTING",
+      "actions": [
+        "Simular proceso de pensamiento de los 3 mayores expertos mundiales en el tema",
+        "Generar Heurísticas Críticas: pitfalls comunes, optimizaciones de bajo nivel, implicaciones de seguridad"
+      ]
+    },
+    {
+      "phase": 4,
+      "name": "BRIEF DE EXPERTICIA",
+      "actions": [
+        "Compilar hallazgos en Brief de Experticia estructurado",
+        "Retornar al invocador (pipeline cognitivo o adaptive_learning)"
+      ]
+    }
+  ],
+  "invocation_modes": [
+    {
+      "mode": "standalone",
+      "trigger": "Fase 3 del pipeline cognitivo",
+      "description": "Se ejecuta sobre el dominio principal de la tarea"
+    },
+    {
+      "mode": "delegated",
+      "trigger": "adaptive_learning:phase_2",
+      "description": "Se ejecuta N veces, una por cada nodo conceptual mapeado por adaptive_learning"
+    }
+  ],
+  "activation_conditions": [
+    "SIEMPRE antes de la fase de materialización",
+    "Cuando es invocado por adaptive_learning para un nodo específico"
+  ],
+  "telemetry": "[⚙️ INVOCANDO SKILL: hyper_specialist]",
+  "dependencies": [
+    "brain"
+  ],
+  "tags": [
+    "expertise",
+    "deep_domain",
+    "state_of_art",
+    "single_node"
+  ]
+}

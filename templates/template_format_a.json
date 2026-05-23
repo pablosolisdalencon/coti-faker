@@ -1,0 +1,59 @@
+{
+  "tipo_documento": "COTIZACIÓN CORPORATIVA",
+  "documento_numero": "{{NUMERO_COTIZACION}}",
+  "emisor": {
+    "razon_social": "{{EMISOR_RAZON_SOCIAL}}",
+    "rut": "{{EMISOR_RUT}}",
+    "giro": "{{EMISOR_GIRO}}",
+    "direccion_comercial": "{{EMISOR_DIRECCION}}",
+    "comuna": "{{EMISOR_COMUNA}}",
+    "ciudad": "{{EMISOR_CIUDAD}}",
+    "contacto_telefono": "{{EMISOR_TELEFONO}}",
+    "contacto_email": "{{EMISOR_EMAIL}}",
+    "sitio_web": "{{EMISOR_WEB}}"
+  },
+  "receptor": {
+    "razon_social": "{{CLIENTE_RAZON_SOCIAL}}",
+    "rut": "{{CLIENTE_RUT}}",
+    "giro": "{{CLIENTE_GIRO}}",
+    "direccion_despacho": "{{CLIENTE_DIRECCION}}",
+    "comuna": "{{CLIENTE_COMUNA}}",
+    "ciudad": "{{CLIENTE_CIUDAD}}",
+    "atencion_a": "{{CLIENTE_CONTACTO_PERSONA}}",
+    "contacto_email": "{{CLIENTE_EMAIL}}"
+  },
+  "fechas": {
+    "fecha_emision": "{{FECHA_EMISION}}",
+    "fecha_vencimiento": "{{FECHA_VENCIMIENTO}}",
+    "dias_validez": 30
+  },
+  "items": [
+    {
+      "linea": 1,
+      "codigo_articulo": "{{CODIGO}}",
+      "descripcion": "{{DESCRIPCION_DETALLADA}}",
+      "cantidad": 0,
+      "unidad_medida": "{{UNIDAD_MEDIDA}}",
+      "precio_unitario_neto": 0,
+      "impuesto_tipo": "AFECTO",
+      "total_linea_neto": 0
+    }
+  ],
+  "condiciones_comerciales": {
+    "forma_pago": "{{FORMA_PAGO}}",
+    "tiempo_entrega_dias_habiles": 0,
+    "datos_transferencia": {
+      "banco": "{{BANCO_NOMBRE}}",
+      "tipo_cuenta": "{{CUENTA_TIPO}}",
+      "numero_cuenta": "{{CUENTA_NUMERO}}",
+      "rut": "{{CUENTA_RUT}}",
+      "email_notificacion": "{{CUENTA_EMAIL}}"
+    }
+  },
+  "resumen_totales": {
+    "subtotal_neto_afecto": 0,
+    "subtotal_neto_exento": 0,
+    "iva_19_porcentaje": 0,
+    "total_general_clp": 0
+  }
+}

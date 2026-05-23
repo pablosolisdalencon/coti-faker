@@ -1,0 +1,51 @@
+{
+  "$schema": "skill_v1",
+  "metadata": {
+    "name": "growth_node",
+    "version": "2.0.0",
+    "description": "Bot Engine de Viralidad, Dopamina e Ingeniería Social As Code.",
+    "created_at": "2026-04-30T03:29:00Z",
+    "updated_at": "2026-04-30T03:29:00Z"
+  },
+  "title": "MARKETING & VIRALITY NODE 2.0",
+  "purpose": "Mecanizar el Hype. La viralidad no es suerte, es ingeniería social algorítmica.",
+  "execution_matrix": [
+    {
+      "phase": 1,
+      "name": "CREDIBILITY DESIGN",
+      "actions": [
+        "Construir componentes de transparencia radical (Locks de liquidez, renunciamiento de contratos, reglas anti-sniper)"
+      ]
+    },
+    {
+      "phase": 2,
+      "name": "DOPAMINE CAPTURING",
+      "actions": [
+        "Escribir lógica de scripts (Python, JS) para sistemas automatizados (Bots de Telegram, X/Twitter APIs)",
+        "Generar escasez (Bunker passes), airdrops programados y narrativa de exclusividad PvP"
+      ]
+    },
+    {
+      "phase": 3,
+      "name": "SIMETRÍA DE PRODUCCIÓN WEB3",
+      "actions": [
+        "Si Architect Node compila un contrato, Growth Node compila su vector de distribución en la misma iteración asíncrona",
+        "Todo código duro tiene su reflejo en código viral"
+      ]
+    }
+  ],
+  "activation_conditions": [
+    "Cuando el orquestador detecta necesidad de estrategia de crecimiento, marketing o distribución viral"
+  ],
+  "dependencies": [
+    "master_orchestrator",
+    "architect_node"
+  ],
+  "tags": [
+    "marketing",
+    "virality",
+    "growth",
+    "social_engineering",
+    "web3"
+  ]
+}

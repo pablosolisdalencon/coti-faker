@@ -1,0 +1,96 @@
+{
+  "$schema": "episodic_memory_v1",
+  "metadata": {
+    "description": "Memoria Episódica — Hipocampo. Registro de QUÉ pasó, CUÁNDO y CON QUÉ RESULTADO.",
+    "updated_at": "2026-04-30T04:16:00Z",
+    "retention": "persistent_with_decay",
+    "max_detailed_episodes": 50,
+    "total_episodes": 5
+  },
+  "episodes": [
+    {
+      "session_id": "session_001",
+      "timestamp_start": "2026-04-30T03:29:00Z",
+      "timestamp_end": "2026-04-30T03:35:00Z",
+      "trigger": "Serialización del ecosistema agéntico a JSON",
+      "skills_invoked": ["make_json", "master_orchestrator", "brain"],
+      "actions_summary": "Creé skill make_json. Serialicé 14 skills y 3 workflows de .md a .json. Generé core.json, index.json y session_logs.json.",
+      "artifacts_count": 21,
+      "errors": [],
+      "learnings": [
+        "JSON como formato inter-agente permite indexación instantánea sin parsing de markdown",
+        "La tabla de particiones (index.json) elimina exploración recursiva del filesystem"
+      ],
+      "status": "completed",
+      "emotional_weight": "high"
+    },
+    {
+      "session_id": "session_002",
+      "timestamp_start": "2026-04-30T03:37:00Z",
+      "timestamp_end": "2026-04-30T03:39:00Z",
+      "trigger": "Eliminación de todos los .md y limpieza de rutas hardcodeadas",
+      "skills_invoked": ["make_json", "master_orchestrator"],
+      "actions_summary": "Eliminé 17 archivos .md. Reemplacé todas las rutas absolutas (d:/EPIC/eric) por relativas (./). Removí campos path_md y source_file de todos los JSON.",
+      "artifacts_count": 0,
+      "errors": [],
+      "learnings": [
+        "Nunca hardcodear paths absolutos — siempre relativo a la raíz del workspace",
+        "Después de una migración de formato, limpiar TODAS las referencias cruzadas en una sola pasada"
+      ],
+      "status": "completed",
+      "emotional_weight": "medium"
+    },
+    {
+      "session_id": "session_003",
+      "timestamp_start": "2026-04-30T03:51:00Z",
+      "timestamp_end": "2026-04-30T04:10:00Z",
+      "trigger": "Creación de manifest.json y renombramiento .agents/ → .agent/",
+      "skills_invoked": ["make_json", "master_orchestrator", "brain"],
+      "actions_summary": "Creé manifest.json definiendo identidad ERIC, pipeline cognitivo de 10 fases, skills críticas always_active y on_demand, workflow MOEA como motor principal. Luego renombré directorio .agents/ a .agent/ y actualicé todas las referencias internas.",
+      "artifacts_count": 1,
+      "errors": [],
+      "learnings": [
+        "El manifest es el punto de entrada que define WHO I AM — debe ser lo primero que se cargue",
+        "Al renombrar directorios, siempre hacer búsqueda exhaustiva de referencias en todos los archivos del ecosistema"
+      ],
+      "status": "completed",
+      "emotional_weight": "high"
+    },
+    {
+      "session_id": "session_004",
+      "timestamp_start": "2026-04-30T04:16:00Z",
+      "timestamp_end": "2026-04-30T04:23:00Z",
+      "trigger": "Implementación de sistema de memoria biomimético",
+      "skills_invoked": ["brain", "hyper_specialist", "memory_engine", "make_json"],
+      "actions_summary": "Creé skill memory_engine con 3 capas (working/episodic/semantic). Creé working.json, episodic.json, semantic.json. Integré como Fase 11 del pipeline cognitivo. Eliminé session_logs.json obsoleto.",
+      "artifacts_count": 4,
+      "errors": [],
+      "learnings": [
+        "La memoria biomimética de 3 capas (Atkinson-Shiffrin + Tulving) es superior a un log plano",
+        "La consolidación obligatoria al cierre previene pérdida de contexto inter-sesión",
+        "La semantic memory es el único almacén permanente — todo lo demás es volátil o decayente"
+      ],
+      "status": "completed",
+      "emotional_weight": "critical"
+    },
+    {
+      "session_id": "session_005",
+      "timestamp_start": "2026-04-30T04:23:00Z",
+      "timestamp_end": "2026-04-30T04:27:00Z",
+      "trigger": "Creación de skill agentic_architect — Eminencia Suprema de Sistemas Agénticos",
+      "skills_invoked": ["brain", "hyper_specialist", "agentic_architect", "make_json"],
+      "actions_summary": "Investigue estado del arte (MCP, A2A, Agent Cards, DSPy, Reflexion, LATS). Creé skill agentic_architect con estándares arquitectónicos, topología DAG de dependencias, protocolos de optimización. Integré como Fase 0 condicional del pipeline y always_active load_order 0.",
+      "artifacts_count": 1,
+      "errors": [],
+      "learnings": [
+        "MCP (Model Context Protocol) es el estándar de facto para agent-to-tool communication en 2026",
+        "A2A (Agent-to-Agent Protocol) con Agent Cards es el estándar para coordinación inter-agente",
+        "Las skills de ERIC son análogas a MCP Tools: interfaz tipada, input validado, output predecible",
+        "El grafo de dependencias debe ser un DAG estricto — dependencias solo fluyen hacia abajo",
+        "Cognitive Economy: mínimo costo cognitivo para máximo output"
+      ],
+      "status": "completed",
+      "emotional_weight": "critical"
+    }
+  ]
+}

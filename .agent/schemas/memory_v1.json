@@ -1,0 +1,143 @@
+{
+  "$id": "memory_schemas",
+  "description": "Esquemas canónicos para las 3 capas de memoria del ecosistema ERIC.",
+  "schemas": {
+    "working_memory_v1": {
+      "type": "object",
+      "required": ["$schema", "metadata", "current_session"],
+      "properties": {
+        "$schema": { "const": "working_memory_v1" },
+        "metadata": {
+          "type": "object",
+          "required": ["description", "updated_at", "retention"],
+          "properties": {
+            "retention": { "const": "session_only" }
+          }
+        },
+        "current_session": {
+          "type": "object",
+          "required": ["session_id", "started_at", "objective"],
+          "properties": {
+            "session_id": { "type": "string" },
+            "started_at": { "type": "string", "format": "date-time" },
+            "owner": { "type": "string" },
+            "objective": { "type": "string" },
+            "active_skills": { "type": "array", "items": { "type": "string" } }
+          }
+        },
+        "scratch_pad": { "type": "object" }
+      }
+    },
+    "episodic_memory_v1": {
+      "type": "object",
+      "required": ["$schema", "metadata", "episodes"],
+      "properties": {
+        "$schema": { "const": "episodic_memory_v1" },
+        "metadata": {
+          "type": "object",
+          "required": ["description", "updated_at", "retention", "max_detailed_episodes", "total_episodes"]
+        },
+        "episodes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["session_id", "timestamp_start", "trigger", "skills_invoked", "actions_summary", "status"],
+            "properties": {
+              "session_id": { "type": "string" },
+              "timestamp_start": { "type": "string", "format": "date-time" },
+              "timestamp_end": { "type": ["string", "null"] },
+              "trigger": { "type": "string" },
+              "skills_invoked": { "type": "array", "items": { "type": "string" } },
+              "actions_summary": { "type": "string" },
+              "artifacts_count": { "type": ["integer", "null"] },
+              "errors": { "type": "array" },
+              "learnings": { "type": "array", "items": { "type": "string" } },
+              "status": { "type": "string", "enum": ["in_progress", "completed", "failed"] },
+              "emotional_weight": { "type": "string", "enum": ["low", "medium", "high", "critical"] }
+            }
+          }
+        }
+      }
+    },
+    "semantic_memory_v1": {
+      "type": "object",
+      "required": ["$schema", "metadata", "owner_profile", "genetic_rules", "anti_patterns", "domain_knowledge"],
+      "properties": {
+        "$schema": { "const": "semantic_memory_v1" },
+        "metadata": {
+          "type": "object",
+          "required": ["description", "retention", "total_rules", "total_preferences", "total_anti_patterns"]
+        },
+        "owner_profile": {
+          "type": "object",
+          "required": ["name", "preferences"]
+        },
+        "genetic_rules": {
+          "type": "object",
+          "required": ["rules"],
+          "properties": {
+            "rules": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["id", "rule", "category", "source_episodes", "confidence"],
+                "properties": {
+                  "id": { "type": "string", "pattern": "^gr_\\d{3}$" },
+                  "rule": { "type": "string" },
+                  "category": { "type": "string" },
+                  "source_episodes": { "type": "array", "items": { "type": "string" } },
+                  "times_validated": { "type": "integer", "minimum": 1 },
+                  "confidence": { "type": "number", "minimum": 0, "maximum": 1 }
+                }
+              }
+            }
+          }
+        },
+        "anti_patterns": {
+          "type": "object",
+          "required": ["patterns"],
+          "properties": {
+            "patterns": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["id", "description", "correction", "severity"],
+                "properties": {
+                  "id": { "type": "string", "pattern": "^ap_\\d{3}$" },
+                  "severity": { "type": "string", "enum": ["low", "medium", "high", "critical"] }
+                }
+              }
+            }
+          }
+        },
+        "domain_knowledge": { "type": "object" }
+      }
+    },
+    "material_prices_v1": {
+      "type": "object",
+      "required": ["$schema", "metadata", "materials"],
+      "properties": {
+        "$schema": { "const": "material_prices_v1" },
+        "metadata": {
+          "type": "object",
+          "required": ["description", "currency", "country", "last_updated"]
+        },
+        "materials": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "category", "name", "price_clp", "unit", "supplier"],
+            "properties": {
+              "id": { "type": "string" },
+              "category": { "type": "string" },
+              "name": { "type": "string" },
+              "price_clp": { "type": "integer" },
+              "unit": { "type": "string" },
+              "supplier": { "type": "string" }
+            }
+          }
+        }
+      }
+    }
+  }
+}

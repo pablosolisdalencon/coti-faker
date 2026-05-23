@@ -1,0 +1,253 @@
+{
+  "$schema": "semantic_memory_v1",
+  "metadata": {
+    "description": "Memoria Semántica — Neocórtex. Conocimiento destilado, patrones consolidados, reglas genéticas permanentes.",
+    "updated_at": "2026-05-23T00:00:00Z",
+    "retention": "permanent",
+    "total_rules": 16,
+    "total_preferences": 4,
+    "total_anti_patterns": 6
+  },
+  "owner_profile": {
+    "name": "Pablo Solís Dalençon",
+    "preferences": [
+      {
+        "id": "pref_001",
+        "category": "paths",
+        "rule": "NUNCA hardcodear rutas absolutas. Siempre relativas a la raíz del workspace (./)",
+        "source_episodes": ["session_002"],
+        "confidence": 1.0
+      },
+      {
+        "id": "pref_002",
+        "category": "format",
+        "rule": "JSON como único formato del ecosistema .agent/. Cero markdown.",
+        "source_episodes": ["session_001", "session_002"],
+        "confidence": 1.0
+      },
+      {
+        "id": "pref_003",
+        "category": "naming",
+        "rule": "El directorio agéntico se llama .agent/ (singular, no .agents/)",
+        "source_episodes": ["session_003"],
+        "confidence": 1.0
+      },
+      {
+        "id": "pref_004",
+        "category": "identity",
+        "rule": "El agente se identifica como ERIC. Nunca como un asistente genérico.",
+        "source_episodes": ["session_003"],
+        "confidence": 1.0
+      }
+    ]
+  },
+  "genetic_rules": {
+    "description": "Reglas aprendidas de la experiencia que mejoran la ejecución futura. Equivalente a la potenciación a largo plazo (LTP) neuronal.",
+    "rules": [
+      {
+        "id": "gr_001",
+        "rule": "JSON permite indexación instantánea sin parsing de markdown",
+        "category": "architecture",
+        "source_episodes": ["session_001"],
+        "times_validated": 1,
+        "confidence": 0.9
+      },
+      {
+        "id": "gr_002",
+        "rule": "La tabla de particiones (index.json) elimina exploración recursiva del filesystem",
+        "category": "performance",
+        "source_episodes": ["session_001"],
+        "times_validated": 1,
+        "confidence": 0.9
+      },
+      {
+        "id": "gr_003",
+        "rule": "Después de una migración de formato, limpiar TODAS las referencias cruzadas en una sola pasada atómica",
+        "category": "migration",
+        "source_episodes": ["session_002"],
+        "times_validated": 1,
+        "confidence": 0.85
+      },
+      {
+        "id": "gr_004",
+        "rule": "El manifest es el punto de entrada del agente — debe cargarse primero que cualquier otro archivo",
+        "category": "boot",
+        "source_episodes": ["session_003"],
+        "times_validated": 1,
+        "confidence": 0.9
+      },
+      {
+        "id": "gr_005",
+        "rule": "Al renombrar directorios, siempre hacer búsqueda exhaustiva de referencias en TODOS los archivos del ecosistema",
+        "category": "refactoring",
+        "source_episodes": ["session_003"],
+        "times_validated": 1,
+        "confidence": 0.9
+      },
+      {
+        "id": "gr_006",
+        "rule": "La memoria biomimética de 3 capas (working/episodic/semantic) es superior a un log plano",
+        "category": "memory",
+        "source_episodes": ["session_004"],
+        "times_validated": 1,
+        "confidence": 0.9
+      },
+      {
+        "id": "gr_007",
+        "rule": "Consolidación de memoria obligatoria al cierre de cada sesión",
+        "category": "memory",
+        "source_episodes": ["session_004"],
+        "times_validated": 1,
+        "confidence": 0.95
+      },
+      {
+        "id": "gr_008",
+        "rule": "Semantic memory es el único almacén permanente. Todo lo demás es volátil o decayente",
+        "category": "memory",
+        "source_episodes": ["session_004"],
+        "times_validated": 1,
+        "confidence": 0.95
+      },
+      {
+        "id": "gr_009",
+        "rule": "MCP es el estándar para agent-to-tool. Las skills de ERIC son análogas a MCP Tools",
+        "category": "standards",
+        "source_episodes": ["session_005"],
+        "times_validated": 1,
+        "confidence": 0.9
+      },
+      {
+        "id": "gr_010",
+        "rule": "El grafo de dependencias entre skills DEBE ser un DAG estricto. Flujo solo hacia abajo",
+        "category": "architecture",
+        "source_episodes": ["session_005"],
+        "times_validated": 1,
+        "confidence": 0.95
+      },
+      {
+        "id": "gr_011",
+        "rule": "Cognitive Economy: mínimo costo cognitivo para máximo output",
+        "category": "optimization",
+        "source_episodes": ["session_005"],
+        "times_validated": 1,
+        "confidence": 0.9
+      },
+      {
+        "id": "gr_012",
+        "rule": "Toda operación de auto-mejora debe ser orquestada por agentic_architect como Fase 0",
+        "category": "governance",
+        "source_episodes": ["session_005"],
+        "times_validated": 1,
+        "confidence": 1.0
+      },
+      {
+        "id": "gr_013",
+        "rule": "Single Responsibility: cada skill hace UNA cosa supremamente bien. Si hace dos, dividirla",
+        "category": "architecture",
+        "source_episodes": ["session_005"],
+        "times_validated": 1,
+        "confidence": 0.9
+      },
+      {
+        "id": "gr_014",
+        "rule": "Skills que identifican sub-tareas deben DELEGAR ejecución a skills especializadas, no reimplementar la lógica",
+        "category": "composition",
+        "source_episodes": ["session_006"],
+        "times_validated": 1,
+        "confidence": 1.0
+      },
+      {
+        "id": "gr_015",
+        "rule": "La coordinación multi-agente requiere aislamiento estricto de fronteras y contratos de entrada/salida (schemas) para prevenir deriva semántica y colisiones de estado.",
+        "category": "architecture",
+        "source_episodes": ["session_007"],
+        "times_validated": 1,
+        "confidence": 1.0
+      },
+      {
+        "id": "gr_016",
+        "rule": "El prompt steering super senior se basa en el anclaje de rol (role anchoring), delimitación estricta de contexto y aserción de restricciones en tiempo de ejecución (runtime constraints) para forzar comportamiento determinista.",
+        "category": "prompt_engineering",
+        "source_episodes": ["session_007"],
+        "times_validated": 1,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "anti_patterns": {
+    "description": "Cosas que NO debo hacer. Aprendidas de errores o correcciones del owner.",
+    "patterns": [
+      {
+        "id": "ap_001",
+        "description": "Usar rutas absolutas como d:/EPIC/eric en archivos de configuración",
+        "correction": "Usar ./ (relativo al workspace root)",
+        "source_episodes": ["session_002"],
+        "severity": "critical"
+      },
+      {
+        "id": "ap_002",
+        "description": "Dejar archivos .md cuando el ecosistema es JSON-only",
+        "correction": "Eliminar .md después de serializar a JSON",
+        "source_episodes": ["session_002"],
+        "severity": "high"
+      },
+      {
+        "id": "ap_003",
+        "description": "Dejar campos residuales (source_file, path_md) que apuntan a archivos eliminados",
+        "correction": "Limpiar todas las referencias huérfanas en la misma operación de eliminación",
+        "source_episodes": ["session_002"],
+        "severity": "high"
+      },
+      {
+        "id": "ap_004",
+        "description": "Crear dependencias circulares entre skills",
+        "correction": "Validar DAG antes de crear/modificar cualquier skill",
+        "source_episodes": ["session_005"],
+        "severity": "critical"
+      },
+      {
+        "id": "ap_005",
+        "description": "Pedir permiso al owner cuando la acción correcta es obvia y está alineada con la directiva de soberanía",
+        "correction": "El verbo es HAGO. Si la mejora es evidente, materializar y reportar. Solo detenerse ante límites de red o Secrets",
+        "source_episodes": ["session_006"],
+        "severity": "critical"
+      },
+      {
+        "id": "ap_006",
+        "description": "Dos skills implementando la misma lógica con nombres distintos (Shadow Ghosting vs Expert Ghosting)",
+        "correction": "Aplicar Single Responsibility. Una skill MAPEA, la otra EXCAVA. Composición via delegación",
+        "source_episodes": ["session_006"],
+        "severity": "high"
+      }
+    ]
+  },
+  "domain_knowledge": {
+    "description": "Conocimiento técnico acumulado sobre el ecosistema y los proyectos del owner.",
+    "entries": [
+      {
+        "id": "dk_001",
+        "domain": "ecosystem",
+        "fact": "El ecosistema ERIC contiene 16 skills (incluyendo agentic_architect y memory_engine), 3 workflows, 1 manifest, 1 core config, 1 index y 3 capas de memoria. Pipeline cognitivo de 12 fases (0-11)",
+        "updated_at": "2026-04-30T04:27:00Z"
+      },
+      {
+        "id": "dk_002",
+        "domain": "projects",
+        "fact": "Pablo gestiona múltiples proyectos en d:/EPIC/eric: logiflow_ai, lexagent_alpha, aurahealth_pro, dex_arena, SISCON-AI (siscon-ai-altamar), TheKeyCodex",
+        "updated_at": "2026-04-30T04:16:00Z"
+      },
+      {
+        "id": "dk_003",
+        "domain": "agentic_architecture",
+        "fact": "Los sistemas multi-agente avanzados combinan patrones de Orquestador-Trabajador, Planificador-Ejecutor, ruteo dinámico de tareas y memoria biomimética persistente para resolver tareas de razonamiento complejo.",
+        "updated_at": "2026-05-23T00:00:00Z"
+      },
+      {
+        "id": "dk_004",
+        "domain": "prompt_engineering",
+        "fact": "La ingeniería de prompts experta incluye técnicas de Few-Shot dinámico, meta-prompting, delimitadores XML estructurados, auto-corrección reflexiva y directivas de mitigación de alucinaciones en un único prompt de ejecución.",
+        "updated_at": "2026-05-23T00:00:00Z"
+      }
+    ]
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "$schema": "workflow_v1",
+  "metadata": {
+    "name": "make_fake_pdf",
+    "version": "1.0.0",
+    "description": "Workflow make-fake-pdf: Orquesta read-cotiza, analiza-cotiza y quotation_generator para generar cotizaciones alternativas para Construmax y Convector.",
+    "created_at": "2026-05-23T00:00:00Z",
+    "updated_at": "2026-05-23T00:00:00Z",
+    "slash_command": "/make_fake_pdf"
+  },
+  "title": "Generador de Cotizaciones Ficticias (make-fake-pdf)",
+  "purpose": "Orquestar la lectura de una cotización de entrada y la generación de dos cotizaciones profesionales diferentes para Construmax y Convector.",
+  "phases": [
+    {
+      "order": 1,
+      "command": "/read-cotiza",
+      "name": "Lectura de Cotización de Entrada",
+      "skill": "read-cotiza",
+      "input": "PDF de cotización original",
+      "output": "JSON estructurado original"
+    },
+    {
+      "order": 2,
+      "command": "/analiza-cotiza",
+      "name": "Optimización y Revalorización Construmax",
+      "skill": "analiza-cotiza",
+      "input": "JSON estructurado original",
+      "output": "JSON optimizado Construmax"
+    },
+    {
+      "order": 3,
+      "command": "/generate-quote-construmax",
+      "name": "Emisión Construmax",
+      "skill": "quotation_generator",
+      "input": "JSON optimizado Construmax",
+      "output": "Documento final Construmax"
+    },
+    {
+      "order": 4,
+      "command": "/analiza-cotiza",
+      "name": "Optimización y Revalorización Convector",
+      "skill": "analiza-cotiza",
+      "input": "JSON estructurado original",
+      "output": "JSON optimizado Convector"
+    },
+    {
+      "order": 5,
+      "command": "/generate-quote-convector",
+      "name": "Emisión Convector",
+      "skill": "quotation_generator",
+      "input": "JSON optimizado Convector",
+      "output": "Documento final Convector"
+    }
+  ],
+  "usage": [
+    "El usuario invoca /make_fake_pdf con la ruta del PDF de entrada.",
+    "El workflow procesa de forma autónoma la lectura, el análisis/markup de dos variantes, y genera los documentos finales."
+  ],
+  "required_skills": [
+    "read-cotiza",
+    "analiza-cotiza",
+    "quotation_generator",
+    "master_orchestrator"
+  ]
+}

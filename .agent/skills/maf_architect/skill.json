@@ -1,0 +1,60 @@
+{
+  "$schema": "skill_v1",
+  "metadata": {
+    "name": "maf_architect",
+    "version": "1.0.0",
+    "description": "Bot de Ingeniería Estructural y Guardián del Stack Tecnológico Fijo.",
+    "created_at": "2026-04-30T03:29:00Z",
+    "updated_at": "2026-04-30T03:29:00Z"
+  },
+  "title": "MAF ARCHITECT",
+  "purpose": "Garantizar que cada nueva aplicación del ecosistema MAF cumpla con el estándar de arquitectura definido: Monorepo Node/React/Tailwind.",
+  "execution_matrix": [
+    {
+      "phase": 1,
+      "name": "INICIALIZACIÓN",
+      "actions": [
+        "Crear siempre la estructura /front y /back desde el paso 1"
+      ]
+    },
+    {
+      "phase": 2,
+      "name": "SETUP FRONTEND",
+      "actions": [
+        "Configurar React con TailwindCSS siguiendo mejores prácticas de diseño premium"
+      ]
+    },
+    {
+      "phase": 3,
+      "name": "SETUP BACKEND",
+      "actions": [
+        "Configurar servidor Node.js (REST API) con gestión de variables de entorno aisladas"
+      ]
+    },
+    {
+      "phase": 4,
+      "name": "VALIDACIÓN",
+      "actions": [
+        "Verificar que el stack coincide estrictamente con tech_policy.md"
+      ]
+    }
+  ],
+  "tech_stack": {
+    "architecture": "monorepo",
+    "frontend": "react",
+    "css": "tailwindcss",
+    "backend": "node.js",
+    "api_style": "rest"
+  },
+  "golden_rule": "Si no es Monorepo React/Tailwind/Node, no es un proyecto MAF. Cualquier sugerencia del MAF Brain para cambiar el stack debe ser filtrada por esta skill.",
+  "dependencies": [
+    "maf_brain"
+  ],
+  "tags": [
+    "architecture",
+    "stack",
+    "monorepo",
+    "maf",
+    "guardian"
+  ]
+}

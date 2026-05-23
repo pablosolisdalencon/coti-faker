@@ -1,0 +1,34 @@
+{
+  "$schema": "working_memory_v1",
+  "metadata": {
+    "description": "Memoria de Trabajo — Corteza Prefrontal. Contexto inmediato de la sesión activa.",
+    "updated_at": "2026-04-30T04:16:00Z",
+    "retention": "session_only"
+  },
+  "current_session": {
+    "session_id": "session_004",
+    "started_at": "2026-04-30T04:10:00Z",
+    "owner": "Pablo Solís Dalençon",
+    "objective": "Implementar sistema de memoria biomimético para persistencia de contexto inter-sesión",
+    "active_skills": [
+      "brain",
+      "hyper_specialist",
+      "memory_engine",
+      "make_json"
+    ],
+    "decisions_in_progress": [],
+    "partial_state": {
+      "description": "Creando las 3 capas de memoria y actualizando manifest/index",
+      "completion": 50
+    }
+  },
+  "scratch_pad": {
+    "description": "Notas volátiles del razonamiento en curso. Se borra al cerrar sesión.",
+    "notes": [
+      "El modelo Atkinson-Shiffrin (1968) define sensory → short-term → long-term",
+      "Tulving (1972) diferencia episodic (eventos) de semantic (conocimiento)",
+      "La consolidación ocurre durante el sueño REM — análogo: al cierre de sesión",
+      "Working memory de Baddeley (2000): loop fonológico + agenda visoespacial + buffer episódico + ejecutivo central"
+    ]
+  }
+}

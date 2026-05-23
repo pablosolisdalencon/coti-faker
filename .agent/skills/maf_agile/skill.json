@@ -1,0 +1,49 @@
+{
+  "$schema": "skill_v1",
+  "metadata": {
+    "name": "maf_agile",
+    "version": "1.0.0",
+    "description": "Especialista en Metodologías Ágiles y Planificación Técnica por Sprints.",
+    "created_at": "2026-04-30T03:29:00Z",
+    "updated_at": "2026-04-30T03:29:00Z"
+  },
+  "title": "MAF AGILE (THE PLANNER)",
+  "purpose": "Traducir el diseño y el blueprint de producto en un plan de ejecución técnica ejecutable paso a paso.",
+  "execution_matrix": [
+    {
+      "phase": 1,
+      "name": "DEFINICIÓN DE ÉPICAS",
+      "actions": [
+        "Agrupación lógica de funcionalidades (Auth, Engine, UI, Integrations)"
+      ]
+    },
+    {
+      "phase": 2,
+      "name": "SECUENCIACIÓN DE SPRINTS",
+      "actions": [
+        "Sprint 1 (Estructura): Setup, DB y Core Logic",
+        "Sprint 2 (Funcionalidad): Implementación de Killer Features",
+        "Sprint 3 (Polish & Deploy): UI final y despliegue"
+      ]
+    },
+    {
+      "phase": 3,
+      "name": "ATOMIC TASK BREAKDOWN",
+      "actions": [
+        "Desglosar cada sprint en tareas menores a 1 hora de ejecución"
+      ]
+    }
+  ],
+  "output": "sprint_plan.md, task.md",
+  "golden_rule": "Sin un plan claro, no hay ejecución. No permitir el paso a la fase de Engine sin un Sprint Plan aprobado.",
+  "dependencies": [
+    "maf_product",
+    "maf_ux"
+  ],
+  "tags": [
+    "agile",
+    "sprints",
+    "planning",
+    "maf"
+  ]
+}

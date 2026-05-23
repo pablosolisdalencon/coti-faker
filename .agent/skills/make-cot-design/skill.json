@@ -1,0 +1,52 @@
+{
+  "$schema": "skill_v1",
+  "metadata": {
+    "name": "make-cot-design",
+    "version": "1.0.0",
+    "description": "Skill altamente especializada en diseño gráfico corporativo profesional, encargada de generar propuestas de diseño de cotizaciones formales basadas en logotipos de forma agnóstica.",
+    "created_at": "2026-05-23T03:00:00Z",
+    "updated_at": "2026-05-23T03:00:00Z"
+  },
+  "title": "MAKE-COT-DESIGN (DISEÑADOR GRÁFICO CORPORATIVO PROFESIONAL)",
+  "purpose": "Analizar logotipos de entrada de manera agnóstica para extraer paletas de colores corporativas y aplicar un motor de renderizado premium (PDF) para generar diseños de cotización altamente profesionales basados en la estructura del documento de referencia.",
+  "execution_matrix": [
+    {
+      "phase": 1,
+      "name": "ANÁLISIS DE LOGOTIPOS Y EXTRACCIÓN DE PALETA DE COLORES",
+      "codename": "BRAND_PALETTE_EXTRACTION",
+      "actions": [
+        "Cargar archivo de imagen de logotipo (PNG) y analizar información de pixeles",
+        "Extraer color corporativo primario y contrastar un color secundario de forma agnóstica",
+        "Aplicar fallback a paletas corporativas premium predefinidas si el análisis no es viable"
+      ]
+    },
+    {
+      "phase": 2,
+      "name": "CARGA DE DATOS E INSPIRACIÓN DE ESTRUCTURA",
+      "codename": "STRUCTURE_INSPIRATION",
+      "actions": [
+        "Cargar estructura base inspirada en la cotización de referencia COT_1216",
+        "Adaptar los datos de emisor, receptor, ítems de propuesta y totales para el renderizado"
+      ]
+    },
+    {
+      "phase": 3,
+      "name": "DISEÑO GRÁFICO Y RENDERIZADO DE PDF PREMIUM",
+      "codename": "PREMIUM_PDF_RENDER",
+      "actions": [
+        "Inyectar logotipo y aplicar la paleta de colores de marca dinámica al layout",
+        "Renderizar cabecera, tabla de partidas con alternancia de fila, totales y bloque de condiciones bancarias con estilo premium",
+        "Guardar las propuestas resultantes en el directorio de salida correspondiente"
+      ]
+    }
+  ],
+  "anti_patterns": [
+    "Usar combinaciones de colores de bajo contraste que afecten la legibilidad del documento",
+    "Depender de layouts estáticos o colores quemados (hardcoded) para la marca",
+    "Generar archivos sin validación de existencia de los logotipos de entrada"
+  ],
+  "dependencies": [
+    "read-cotiza"
+  ],
+  "tags": ["design", "brand", "pdf", "color-extraction", "corporate", "professional"]
+}

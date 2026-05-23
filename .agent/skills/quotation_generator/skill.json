@@ -1,0 +1,67 @@
+{
+  "$schema": "skill_v1",
+  "metadata": {
+    "name": "quotation_generator",
+    "version": "1.0.0",
+    "description": "Skill altamente especializada en la generación de documentos de cotización formal para el rubro de la construcción en Chile.",
+    "created_at": "2026-05-23T00:00:00Z",
+    "updated_at": "2026-05-23T00:00:00Z"
+  },
+  "title": "QUOTATION_GENERATOR (GENERADOR DE COTIZACIONES DE CONSTRUCCIÓN CHILE)",
+  "purpose": "Procesar descripciones técnicas y requerimientos para generar cotizaciones formales estructuradas en CLP, aplicando el desglose por ítems estándar de construcción en Chile, validación de RUT y cálculo exacto de impuestos.",
+  "execution_matrix": [
+    {
+      "phase": 1,
+      "name": "VALIDACIÓN DE IDENTIDAD Y DATOS MÍNIMOS",
+      "codename": "MINIMUM_DATA_VALIDATION",
+      "actions": [
+        "Verificar presencia de RUT y Razón Social de Emisor y Receptor",
+        "Asegurar fechas de emisión y vencimiento coherentes (vencimiento estándar a 30 días)"
+      ]
+    },
+    {
+      "phase": 2,
+      "name": "DESGLOSE TÉCNICO E ITEMIZADO",
+      "codename": "TECHNICAL_BREAKDOWN",
+      "actions": [
+        "Estructurar la cotización en un árbol de partidas jerárquicas (1., 1.1, 1.2, etc.)",
+        "Definir descripción detallada (glosa) para cada partida, especificando alcance técnico",
+        "Mapear unidades chilenas estándar de construcción: UNID (unidad), Global (gl), mt2 (m2), mt3 (m3), ml (metro lineal), kg",
+        "Extraer precios de referencia para materiales desde .agent/memory/material_prices.json"
+      ]
+    },
+    {
+      "phase": 3,
+      "name": "CÁLCULO MATEMÁTICO FINANCIERO",
+      "codename": "FINANCIAL_CALCULATIONS",
+      "rules": [
+        "Monto Neto = Suma(Cantidad * Precio Unitario) de cada ítem Afecto (AF)",
+        "Monto Exento = Suma(Cantidad * Precio Unitario) de cada ítem Exento (EX)",
+        "IVA = Redondeo(Monto Neto * 0.19)",
+        "Monto Total = Monto Neto + Monto Exento + IVA",
+        "Todos los montos finales deben ser enteros redondeados sin decimales en CLP"
+      ]
+    },
+    {
+      "phase": 4,
+      "name": "FORMATEO DE CONDICIONES COMERCIALES",
+      "codename": "COMMERCIAL_TERMS",
+      "actions": [
+        "Inyectar condiciones generales de pago estándar (ej. 50% de anticipo / 50% contra entrega)",
+        "Especificar plazos estimados de ejecución en jornadas hábiles",
+        "Incluir cláusulas de validez de la propuesta y datos bancarios para transferencia"
+      ]
+    }
+  ],
+  "anti_patterns": [
+    "Usar decimales en los totales de pesos chilenos (CLP)",
+    "Calcular IVA sobre montos exentos (EX)",
+    "Usar formato de fecha norteamericano (MM/DD/YYYY) en lugar del chileno estándar (DD-MM-YYYY o DD de Mes de YYYY)",
+    "Omitir el RUT del cliente o emisor",
+    "Uso de unidades no estándar o informales"
+  ],
+  "dependencies": [
+    "material_prices"
+  ],
+  "tags": ["construction", "quotation", "chile", "clp", "invoice", "finance"]
+}

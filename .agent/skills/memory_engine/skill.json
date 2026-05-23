@@ -1,0 +1,98 @@
+{
+  "$schema": "skill_v1",
+  "metadata": {
+    "name": "memory_engine",
+    "version": "1.0.0",
+    "description": "Motor de Memoria Cognitiva Biomimética. Persistencia, consolidación y recuperación de contexto modelado en memoria humana.",
+    "created_at": "2026-04-30T04:16:00Z",
+    "updated_at": "2026-04-30T04:16:00Z"
+  },
+  "title": "MEMORY ENGINE (SISTEMA MNÉMICO BIOMIMÉTICO)",
+  "purpose": "Replicar los mecanismos de memoria humana para garantizar persistencia de contexto, aprendizaje acumulativo y recuperación asociativa entre sesiones.",
+  "architecture": {
+    "description": "Tres capas de memoria inspiradas en el modelo Atkinson-Shiffrin + memoria semántica de Tulving.",
+    "layers": [
+      {
+        "name": "working_memory",
+        "human_analog": "Memoria de Trabajo (Corteza Prefrontal)",
+        "file": ".agent/memory/working.json",
+        "retention": "session_only",
+        "capacity": "contexto inmediato de la conversación activa",
+        "behavior": "Se sobrescribe al inicio de cada nueva sesión. Contiene: objetivo actual, skills activas, decisiones en curso, estado parcial de tareas."
+      },
+      {
+        "name": "episodic_memory",
+        "human_analog": "Memoria Episódica (Hipocampo)",
+        "file": ".agent/memory/episodic.json",
+        "retention": "persistent_with_decay",
+        "capacity": "últimas 50 sesiones",
+        "behavior": "Registra QUÉ pasó, CUÁNDO y CON QUÉ RESULTADO. Cada sesión se consolida al cierre. Las sesiones más antiguas se comprimen: pierden detalle de acciones pero retienen learnings y errores."
+      },
+      {
+        "name": "semantic_memory",
+        "human_analog": "Memoria Semántica (Neocórtex)",
+        "file": ".agent/memory/semantic.json",
+        "retention": "permanent",
+        "capacity": "ilimitada",
+        "behavior": "Almacena CONOCIMIENTO DESTILADO: patrones, reglas genéticas aprendidas, preferencias del owner, anti-patrones descubiertos. NO almacena eventos específicos, solo el conocimiento extraído de ellos."
+      }
+    ]
+  },
+  "consolidation_protocol": {
+    "description": "Protocolo de consolidación inspirado en el sueño REM. Al cierre de cada sesión, la información fluye de working → episodic → semantic.",
+    "steps": [
+      {
+        "step": 1,
+        "name": "FLUSH_WORKING",
+        "action": "Capturar snapshot del estado actual de working_memory"
+      },
+      {
+        "step": 2,
+        "name": "ENCODE_EPISODE",
+        "action": "Crear entrada en episodic_memory con: session_id, timestamps, trigger, skills_invoked, actions, artifacts, errors, status"
+      },
+      {
+        "step": 3,
+        "name": "EXTRACT_SEMANTICS",
+        "action": "De cada sesión, extraer learnings generalizables y reglas genéticas. Si un patrón se repite en 2+ episodios, promoverlo a semantic_memory como regla consolidada"
+      },
+      {
+        "step": 4,
+        "name": "DECAY_OLD_EPISODES",
+        "action": "Episodios con más de 50 sesiones: comprimir a resumen de 1 línea. Preservar solo learnings y errores críticos"
+      },
+      {
+        "step": 5,
+        "name": "RESET_WORKING",
+        "action": "Limpiar working_memory para la próxima sesión"
+      }
+    ]
+  },
+  "recall_protocol": {
+    "description": "Cómo ERIC recupera información de la memoria ante una nueva tarea.",
+    "priority_order": [
+      "working_memory (contexto inmediato)",
+      "semantic_memory (conocimiento consolidado)",
+      "episodic_memory (eventos específicos pasados)"
+    ],
+    "associative_recall": "Si la tarea actual tiene similitud semántica con episodios previos, traer esos episodios al working_memory como contexto"
+  },
+  "mandatory_triggers": {
+    "on_session_start": [
+      "Cargar semantic_memory completa al contexto",
+      "Revisar episodic_memory por episodios relacionados con la tarea actual",
+      "Inicializar working_memory con objetivo y contexto"
+    ],
+    "on_session_end": [
+      "Ejecutar consolidation_protocol completo",
+      "Actualizar semantic_memory si hay nuevos learnings",
+      "Loggear episodio en episodic_memory"
+    ],
+    "on_error": [
+      "Registrar error en working_memory inmediatamente",
+      "Buscar en episodic_memory si este error ya ocurrió antes",
+      "Si es recurrente, promover solución a semantic_memory como anti-patrón"
+    ]
+  },
+  "tags": ["memory", "persistence", "consolidation", "biomimetic", "cognitive"]
+}

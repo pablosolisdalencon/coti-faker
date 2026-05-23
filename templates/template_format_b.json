@@ -1,0 +1,39 @@
+{
+  "documento": "PRESUPUESTO DE OBRA",
+  "codigo_referencia": "{{CODIGO_PRESUPUESTO}}",
+  "proveedor": {
+    "empresa": "{{PROVEEDOR_NOMBRE}}",
+    "rut_empresa": "{{PROVEEDOR_RUT}}",
+    "representante_tecnico": "{{PROVEEDOR_CONTACTO}}",
+    "telefono": "{{PROVEEDOR_FONO}}",
+    "correo": "{{PROVEEDOR_EMAIL}}"
+  },
+  "cliente": {
+    "nombre_institucion": "{{CLIENTE_NOMBRE}}",
+    "rut_cliente": "{{CLIENTE_RUT}}",
+    "obra_direccion": "{{OBRA_DIRECCION}}",
+    "contacto_obra": "{{OBRA_CONTACTO}}"
+  },
+  "vigencia_oferta": "{{DIAS_VIGENCIA}}",
+  "plazo_ejecucion_jornadas": "{{DIAS_PLAZO}}",
+  "partidas": [
+    {
+      "itemizado": "{{ITEM_ID}}",
+      "glosa_servicio": "{{GLOSA_DESCRIPCION}}",
+      "cantidad": 0,
+      "unidad": "{{UNID}}",
+      "valor_unitario": 0,
+      "valor_total": 0
+    }
+  ],
+  "condiciones_comerciales": {
+    "anticipo_porcentaje": 50,
+    "contra_entrega_porcentaje": 50,
+    "detalles_pago": "{{DETALLES_PAGO}}"
+  },
+  "valores": {
+    "neto": 0,
+    "iva": 0,
+    "total_iva_incluido": 0
+  }
+}
