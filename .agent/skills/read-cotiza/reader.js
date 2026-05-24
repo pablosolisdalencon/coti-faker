@@ -275,8 +275,12 @@ async function parsePdfToJson(pdfPath, jsonPath) {
     const data = await pdfParse(dataBuffer);
     const structured = parseQuotationText(data.text);
     
-    fs.writeFileSync(jsonPath, JSON.stringify(structured, null, 2), "utf8");
-    console.log(`Success: Structurized ${path.basename(pdfPath)} -> ${path.basename(jsonPath)}`);
+    if (jsonPath) {
+      fs.writeFileSync(jsonPath, JSON.stringify(structured, null, 2), "utf8");
+      console.log(`Success: Structurized ${path.basename(pdfPath)} -> ${path.basename(jsonPath)}`);
+    } else {
+      console.log(`Success: Structurized ${path.basename(pdfPath)} (in-memory)`);
+    }
     return structured;
   } catch (error) {
     console.error(`Error parsing PDF:`, error);

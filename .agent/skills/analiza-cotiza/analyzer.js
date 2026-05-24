@@ -146,8 +146,10 @@ function distributeMarkup(items, markupPercent) {
  * @returns {Object} - Upgraded quotation
  */
 function analyzeAndMarkupQuotation(originalQuotation, markupPercent = 25) {
-  if (markupPercent < 20 || markupPercent > 30) {
-    throw new Error("Markup percentage must be between 20 and 30.");
+  // markupPercent: porcentaje de aumento sobre el total original (ej: 22 = +22%).
+  // Sin restricción de rango — el valor lo define el perfil de empresa via "diferencia_precio".
+  if (typeof markupPercent !== 'number' || isNaN(markupPercent) || markupPercent < 0) {
+    throw new Error('Markup percentage must be a non-negative number.');
   }
 
   const result = JSON.parse(JSON.stringify(originalQuotation));

@@ -2,11 +2,12 @@
   "$schema": "workflow_v1",
   "metadata": {
     "name": "make_fake_pdf",
-    "version": "1.0.0",
-    "description": "Workflow make-fake-pdf: Orquesta read-cotiza, analiza-cotiza y quotation_generator para generar cotizaciones alternativas para Construmax y Convector.",
+    "version": "1.1.0",
+    "description": "Workflow make-fake-pdf: Orquesta read-cotiza, analiza-cotiza y quotation_generator para generar cotizaciones. Invocable directamente con el comando 'COTIZA'.",
     "created_at": "2026-05-23T00:00:00Z",
-    "updated_at": "2026-05-23T00:00:00Z",
-    "slash_command": "/make_fake_pdf"
+    "updated_at": "2026-05-24T00:00:00Z",
+    "slash_command": "/cotiza",
+    "triggers": ["COTIZA", "cotiza", "/cotiza"]
   },
   "title": "Generador de Cotizaciones Ficticias (make-fake-pdf)",
   "purpose": "Orquestar la lectura de una cotización de entrada y la generación de dos cotizaciones profesionales diferentes para Construmax y Convector.",
@@ -53,8 +54,8 @@
     }
   ],
   "usage": [
-    "El usuario invoca /make_fake_pdf con la ruta del PDF de entrada.",
-    "El workflow procesa de forma autónoma la lectura, el análisis/markup de dos variantes, y genera los documentos finales."
+    "IMPERATIVO: Si el usuario escribe la palabra 'COTIZA', 'cotiza' o '/cotiza', debes ejecutar automáticamente y sin preguntar el comando: `node \"d:\\EPIC\\coti-faker\\.agent\\workflows\\make_fake_pdf.js\"`.",
+    "El workflow procesa de forma autónoma la lectura de los PDFs en /tareas, el análisis/markup usando los perfiles en /empresas, y genera los documentos finales."
   ],
   "required_skills": [
     "read-cotiza",
