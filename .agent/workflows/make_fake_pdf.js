@@ -328,8 +328,30 @@ function renderPDF(quote, outputPath) {
 
         renderHeader(doc, quote, layout);
 
-        // -- BARRA DE SECCIÓN: Cliente --
+        // -- BARRA DE SECCIÓN: Empresa --
         let sy = 100;
+        doc.rect(50, sy, 512, 20).fill(hBg);
+        // diagonal accent
+        doc.save().translate(50, sy).polygon([0,0],[20,0],[0,20]).fill(hFg).restore();
+        doc.fillColor(hFg).fontSize(9).text('Información de la Empresa', 75, sy + 5, { bold: true });
+        sy += 28;
+
+        doc.fillColor('#000000').fontSize(8);
+        doc.text('Razón Social:', 50, sy, { bold: true });
+        doc.text(quote.emisor.razon_social || '', 130, sy, { width: 200 });
+        doc.text('RUT:', 350, sy, { bold: true });
+        doc.text(quote.emisor.rut || '', 380, sy);
+        sy += 14;
+        doc.text('Dirección:', 50, sy, { bold: true });
+        doc.text(quote.emisor.direccion || '', 105, sy, { width: 220 });
+        doc.text('Contacto:', 350, sy, { bold: true });
+        doc.text(quote.emisor.contacto?.nombre || '', 400, sy);
+        sy += 14;
+        doc.text('Teléfono:', 50, sy, { bold: true });
+        doc.text(quote.emisor.fono || '', 105, sy);
+        sy += 22;
+
+        // -- BARRA DE SECCIÓN: Cliente --
         doc.rect(50, sy, 512, 20).fill(hBg);
         // diagonal accent
         doc.save().translate(50, sy).polygon([0,0],[20,0],[0,20]).fill(hFg).restore();
@@ -412,10 +434,6 @@ function renderPDF(quote, outputPath) {
         doc.fontSize(10).fillColor(hBg);
         doc.text(`TOTAL: ${formatCLP(quote.totales.monto_total)}`, 390, sy, { bold: true, align: 'right', width: 172 });
 
-        if (quote.emisor.condiciones_del_servicio) {
-          renderCondicionesServicio(doc, quote.emisor.condiciones_del_servicio, quote, layout, hBg, hFg);
-        }
-
         // -- FOOTER VERDE --
         const footerY = 720;
         doc.rect(0, footerY, 612, 72).fill(fBg);
@@ -423,13 +441,23 @@ function renderPDF(quote, outputPath) {
         if (resolvedLogoDFSFooter) {
           doc.image(resolvedLogoDFSFooter, 50, footerY + 8, { width: 70, fit: [70, 45] });
         }
+        
+        const oldBottom = doc.page.margins.bottom;
+        doc.page.margins.bottom = 0;
+        
         doc.fillColor(fFg).fontSize(8);
-        doc.text(quote.emisor.razon_social || '', 135, footerY + 10, { bold: true });
-        doc.text(quote.emisor.direccion || '', 135, footerY + 23);
-        doc.text(`Tel: ${quote.emisor.fono || ''}`, 135, footerY + 36);
+        doc.text(quote.emisor.razon_social || '', 135, footerY + 10, { bold: true, lineBreak: false });
+        doc.text(quote.emisor.direccion || '', 135, footerY + 23, { lineBreak: false });
+        doc.text(`Tel: ${quote.emisor.fono || ''}`, 135, footerY + 36, { lineBreak: false });
 
-        doc.text(`Nº Cotización: ${quote.numero}`, 400, footerY + 10, { align: 'right', width: 162 });
-        doc.text(`Fecha: ${quote.fechas?.fecha_emision || 'N/A'}`, 400, footerY + 23, { align: 'right', width: 162 });
+        doc.text(`Nº Cotización: ${quote.numero}`, 400, footerY + 10, { align: 'right', width: 162, lineBreak: false });
+        doc.text(`Fecha: ${quote.fechas?.fecha_emision || 'N/A'}`, 400, footerY + 23, { align: 'right', width: 162, lineBreak: false });
+        
+        doc.page.margins.bottom = oldBottom;
+
+        if (quote.emisor.condiciones_del_servicio) {
+          renderCondicionesServicio(doc, quote.emisor.condiciones_del_servicio, quote, layout, hBg, hFg);
+        }
 
       } else if (layout === 'minimalist') {
         // Legacy fallback minimalist
@@ -694,6 +722,12 @@ async function generateFakePdfForCompany(inputPdfPath, companyProfile, companyLa
   const baseName = getCleanSuffix(inputPdfPath);
   const safeLabel = companyLabel.replace(/\s+/g, '_');
   const outPath = path.join(outputDir, `${baseName}_${safeLabel}.pdf`);
+
+  // Override fecha_emision with the current date
+  if (!quote.fechas) quote.fechas = {};
+  const now = new Date();
+  const dateStr = `${String(now.getDate()).padStart(2, '0')}/${String(now.getMonth() + 1).padStart(2, '0')}/${now.getFullYear()}`;
+  quote.fechas.fecha_emision = dateStr;
 
   await renderPDF(quote, outPath);
   console.log(`✅ PDF generado para ${companyLabel}: ${outPath}`);
